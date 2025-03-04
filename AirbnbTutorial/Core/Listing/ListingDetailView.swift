@@ -68,7 +68,7 @@ struct ListingDetailView: View {
             
             // listing features
             
-            VStack {
+            VStack(spacing: 16) {
                 ForEach(0 ..< 2) { feature in
                     HStack(spacing: 12) {
                         Image(systemName: "medal")
@@ -82,11 +82,13 @@ struct ListingDetailView: View {
                                 .font(.caption)
                                 .foregroundStyle(.gray)
                         }
+                        Spacer()
                     }
-                    .padding(.leading)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+//                    .padding()
+//                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
+            .padding()
         }
     }
 }
