@@ -131,7 +131,7 @@ struct ListingDetailView: View {
                             .frame(width: 152, height: 100)
                             .font(.subheadline)
                             .fontWeight(.semibold)
-                            .overlay {
+                            .overlay { //shape in overlay, get's parent's size
                                 RoundedRectangle(cornerRadius: 12)
                                     .stroke(lineWidth: 1)
                                     .foregroundStyle(.gray)
@@ -179,9 +179,9 @@ struct ListingDetailView: View {
             }
             .padding()
         }
-        .ignoresSafeArea()
-        .padding(.bottom, 64)
-        .overlay(alignment: .bottom) {
+        .ignoresSafeArea() //make the image fuller on top
+        .padding(.bottom, 70)
+        .overlay(alignment: .bottom) { //for bottom sticky button(content driven overlay) size themselves as the content
             VStack {
                 Divider()
                     .padding(.bottom)
