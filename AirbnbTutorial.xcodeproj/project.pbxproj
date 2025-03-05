@@ -17,6 +17,7 @@
 		ABCF86252D74FE5A00872850 /* ListingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF86242D74FE5A00872850 /* ListingDetailView.swift */; };
 		ABCF86282D74FF5900872850 /* ListingImageCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF86272D74FF5900872850 /* ListingImageCarouselView.swift */; };
 		ABCF862A2D7502FD00872850 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF86292D7502FD00872850 /* RatingView.swift */; };
+		ABCF862C2D778CBC00872850 /* DestinationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF862B2D778CBC00872850 /* DestinationSearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		ABCF86242D74FE5A00872850 /* ListingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDetailView.swift; sourceTree = "<group>"; };
 		ABCF86272D74FF5900872850 /* ListingImageCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingImageCarouselView.swift; sourceTree = "<group>"; };
 		ABCF86292D7502FD00872850 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		ABCF862B2D778CBC00872850 /* DestinationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationSearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			children = (
 				ABCF861E2D70A98400872850 /* ExploreView.swift */,
 				ABCF86222D738E0500872850 /* SearchAndFilterBar.swift */,
+				ABCF862B2D778CBC00872850 /* DestinationSearchView.swift */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				ABCF86212D72453500872850 /* ListingItemView.swift in Sources */,
 				ABCF862A2D7502FD00872850 /* RatingView.swift in Sources */,
 				ABCF861F2D70A98400872850 /* ExploreView.swift in Sources */,
+				ABCF862C2D778CBC00872850 /* DestinationSearchView.swift in Sources */,
 				ABCF86232D738E0500872850 /* SearchAndFilterBar.swift in Sources */,
 				ABCF86252D74FE5A00872850 /* ListingDetailView.swift in Sources */,
 				ABCF860F2D70A7E200872850 /* ContentView.swift in Sources */,
