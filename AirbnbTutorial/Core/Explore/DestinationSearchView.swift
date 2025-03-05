@@ -45,9 +45,16 @@ struct DestinationSearchView: View {
             }
             .padding()
             .background(.white)
-            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .clipShape(RoundedRectangle(cornerRadius: 14))
             .shadow(radius: 10)
             .padding()
+            
+            
+            // date selection view
+            CollapsablePickerView(title: "When", description: "Add dates")
+            
+            // guest num view
+            CollapsablePickerView(title: "Who", description: "Add guests")
             
         }
     }
@@ -55,4 +62,28 @@ struct DestinationSearchView: View {
 
 #Preview {
     DestinationSearchView(show: .constant(false)) //just for preview, dummy binding since there is no parentview while on preview mode
+}
+
+struct CollapsablePickerView: View {
+    let title: String
+    let description: String
+    var body: some View {
+        VStack {
+            HStack {
+                Text(title)
+                    .foregroundStyle(.gray)
+                
+                Spacer()
+                
+                Text(description)
+                    .fontWeight(.semibold)
+                    .font(.subheadline)
+            }
+        }
+        .padding()
+        .background(.white)
+        .clipShape(RoundedRectangle(cornerRadius: 14))
+        .shadow(radius: 10)
+        .padding()
+    }
 }
