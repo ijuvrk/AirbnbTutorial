@@ -32,7 +32,6 @@ struct DestinationSearchView: View {
             
             VStack(alignment: .leading) {
                 if selectedOption == .location {
-                    VStack(alignment: .leading) {
                         Text("Where to?")
                             .font(.title2)
                             .fontWeight(.semibold)
@@ -50,59 +49,46 @@ struct DestinationSearchView: View {
                                 .stroke(lineWidth: 1.0)
                                 .foregroundStyle(Color(.systemGray4))
                         }
-                    }
-                    
-                    .cardShadowStyle()
-                }
-                else {
+                } else {
                     CollapsablePickerView(title: "Where to?", description: "Add destination")
                 }
-                
             }
+            .padding()
             .frame(height: selectedOption == .location ? 120 : 64)
+            .background(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .padding()
+            .shadow(radius: 10)
             .onTapGesture {
-                selectedOption = .location
+                withAnimation(.snappy) { selectedOption = .location }
             }
             
             // date selection view
-            
             VStack(alignment: .leading) {
                 if selectedOption == .dates {
-                    VStack(alignment: .leading) {
-                        Text("When are you coming?")
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                        
                         HStack {
-                            Image(systemName: "magnifyingglass")
-                                .imageScale(.small)
-                            TextField("Search destinations", text: $destination)
-                                .font(.subheadline)//binds to the state. and stores in the state variable. state changed -> view refreshes, text is shown
+                            Text("Show expanded View")
+                            
+                            Spacer()
                         }
-                        .frame(height: 44)
-                        .padding(.horizontal)
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(lineWidth: 1.0)
-                                .foregroundStyle(Color(.systemGray4))
-                        }
-                    }
-                    .frame(height: selectedOption == .dates ? 120 : 64)
-                    .cardShadowStyle()
                     
                 } else {
                     CollapsablePickerView(title: "When", description: "Add dates")
                 }
             }
+            .padding()
+            .frame(height: selectedOption == .dates ? 120 : 64)
+            .background(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .padding()
+            .shadow(radius: 10)
             .onTapGesture {
-                selectedOption = .dates
-            } //outside VStack is better for performance
+                withAnimation(.snappy) { selectedOption = .dates } }//outside VStack is better for performance
             //no creating/destroying each time
             
             // guest num view
             VStack {
                 if selectedOption == .guests {
-                    VStack(alignment: .leading) {
                         Text("Who are you coming with?")
                             .font(.title2)
                             .fontWeight(.semibold)
@@ -120,15 +106,19 @@ struct DestinationSearchView: View {
                                 .stroke(lineWidth: 1.0)
                                 .foregroundStyle(Color(.systemGray4))
                         }
-                    }
-                    .cardShadowStyle()
                     
                 } else {
                     CollapsablePickerView(title: "Who", description: "Add guests")
                 }
             }
+            .padding()
+            .frame(height: selectedOption == .guests ? 120 : 64)
+            .background(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .padding()
+            .shadow(radius: 10)
             .onTapGesture {
-                selectedOption = .guests
+                withAnimation(.snappy) { selectedOption = .guests }
             }
         }
     }
@@ -154,8 +144,6 @@ struct CollapsablePickerView: View {
                     .font(.subheadline)
             }
         }
-        .cardShadowStyle()
-//        .frame(height: 64)
     }
 }
 
