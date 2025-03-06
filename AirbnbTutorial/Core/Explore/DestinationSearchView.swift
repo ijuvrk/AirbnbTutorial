@@ -16,7 +16,10 @@ enum DestinationSearchOptions {
 struct DestinationSearchView: View {
     @Binding var show: Bool
     @State private var destination = ""
-    @State private var selectedOption: DestinationSearchOptions = .location
+    @State private var selectedOption: DestinationSearchOptions = .location //to re-render the view when the state changes
+    @State private var fromDate = Date()
+    @State private var toDate = Date()
+    
     
     var body: some View {
         VStack {
@@ -30,6 +33,7 @@ struct DestinationSearchView: View {
                     .foregroundStyle(.black)
             }
             
+            //location view
             VStack(alignment: .leading) {
                 if selectedOption == .location {
                         Text("Where to?")
@@ -66,18 +70,26 @@ struct DestinationSearchView: View {
             // date selection view
             VStack(alignment: .leading) {
                 if selectedOption == .dates {
-                        HStack {
-                            Text("Show expanded View")
-                            
-                            Spacer()
-                        }
+                    Text("When's your trip?")
+                        .font(.title2)
+                        .fontWeight(.semibold)
                     
+                    VStack {
+                        DatePicker("From", selection: $fromDate, displayedComponents: .date)
+                        
+                        Divider()
+                        
+                        DatePicker("To", selection: $toDate, displayedComponents: .date)
+                    }
+                    .foregroundStyle(.gray)
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
                 } else {
                     CollapsablePickerView(title: "When", description: "Add dates")
                 }
             }
             .padding()
-            .frame(height: selectedOption == .dates ? 120 : 64)
+            .frame(height: selectedOption == .dates ? 180 : 64)
             .background(.white)
             .clipShape(RoundedRectangle(cornerRadius: 12))
             .padding()
