@@ -19,19 +19,37 @@ struct DestinationSearchView: View {
     @State private var selectedOption: DestinationSearchOptions = .location //to re-render the view when the state changes
     @State private var fromDate = Date()
     @State private var toDate = Date()
+    @State private var noOfGuests: Int = 0
     
     
     var body: some View {
         VStack {
-            Button {
-                withAnimation(.snappy) {
-                    show.toggle() // toggles state value and returns to ExploreView.
+            HStack {
+                Button {
+                    withAnimation(.snappy) {
+                        show.toggle() // toggles state value and returns to ExploreView.
+                    }
+                } label: {
+                    Image(systemName: "xmark.circle")
+                        .imageScale(.large)
+                        .foregroundStyle(.black)
                 }
-            } label: {
-                Image(systemName: "xmark.circle")
-                    .imageScale(.large)
+                
+                Spacer()
+                
+                if destination != "" || noOfGuests != 0 {
+                    Button("Clear") {
+                        destination = ""
+                        fromDate = Date()
+                        toDate = Date()
+                        noOfGuests = 0
+                    }
                     .foregroundStyle(.black)
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                }
             }
+            .padding()
             
             //location view
             VStack(alignment: .leading) {
@@ -57,12 +75,8 @@ struct DestinationSearchView: View {
                     CollapsablePickerView(title: "Where to?", description: "Add destination")
                 }
             }
-            .padding()
-            .frame(height: selectedOption == .location ? 120 : 64)
-            .background(.white)
-            .clipShape(RoundedRectangle(cornerRadius: 12))
-            .padding()
-            .shadow(radius: 10)
+            .frame(height: selectedOption == .location ? 120 : 50)
+            .collapsibleDestinationViewModifier()
             .onTapGesture {
                 withAnimation(.snappy) { selectedOption = .location }
             }
@@ -88,50 +102,39 @@ struct DestinationSearchView: View {
                     CollapsablePickerView(title: "When", description: "Add dates")
                 }
             }
-            .padding()
-            .frame(height: selectedOption == .dates ? 180 : 64)
-            .background(.white)
-            .clipShape(RoundedRectangle(cornerRadius: 12))
-            .padding()
-            .shadow(radius: 10)
+            .frame(height: selectedOption == .dates ? 180 : 50)
+            .collapsibleDestinationViewModifier()
             .onTapGesture {
                 withAnimation(.snappy) { selectedOption = .dates } }//outside VStack is better for performance
             //no creating/destroying each time
             
             // guest num view
-            VStack {
+            VStack(alignment: .leading) {
                 if selectedOption == .guests {
-                        Text("Who are you coming with?")
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                        
-                        HStack {
-                            Image(systemName: "magnifyingglass")
-                                .imageScale(.small)
-                            TextField("Search destinations", text: $destination)
-                                .font(.subheadline)//binds to the state. and stores in the state variable. state changed -> view refreshes, text is shown
-                        }
-                        .frame(height: 44)
-                        .padding(.horizontal)
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(lineWidth: 1.0)
-                                .foregroundStyle(Color(.systemGray4))
-                        }
+                        Text("Who's coming?")
+                        .font(.title2)
+                        .fontWeight(.semibold)
                     
+                    Stepper {
+                        Text("\(noOfGuests) Adults")
+                    } onIncrement: {
+                        noOfGuests += 1
+                    } onDecrement: {
+                        guard noOfGuests > 0 else { return }
+                        noOfGuests -= 1
+                    }
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
                 } else {
                     CollapsablePickerView(title: "Who", description: "Add guests")
                 }
             }
-            .padding()
-            .frame(height: selectedOption == .guests ? 120 : 64)
-            .background(.white)
-            .clipShape(RoundedRectangle(cornerRadius: 12))
-            .padding()
-            .shadow(radius: 10)
+            .frame(height: selectedOption == .guests ? 120 : 50)
+            .collapsibleDestinationViewModifier()
             .onTapGesture {
                 withAnimation(.snappy) { selectedOption = .guests }
             }
+            Spacer() // to push content to the top
         }
     }
 }
@@ -159,19 +162,19 @@ struct CollapsablePickerView: View {
     }
 }
 
-struct CardShadowStyle: ViewModifier {
+struct CollapsibleDestinationViewModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding()
             .background(.white)
-            .clipShape(RoundedRectangle(cornerRadius: 14))
-            .shadow(radius: 10)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
             .padding()
+            .shadow(radius: 10)
     }
 }
 
 extension View {
-    func cardShadowStyle() -> some View {
-        modifier(CardShadowStyle())
+    func collapsibleDestinationViewModifier() -> some View {
+        modifier(CollapsibleDestinationViewModifier())
     }
 }
