@@ -11,6 +11,7 @@ struct WishlistView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 32) {
+                
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Log in to view your wishlists.")
                         .font(.headline)
@@ -19,7 +20,16 @@ struct WishlistView: View {
                     Text("You can create, view or edit wishlists once you've logged in")
                         .font(.footnote)
                 }
+                .frame(width: 340, height: 100)
+                
+                PrimaryLoginButtonView(action: {
+                    print("Button Tapped")
+                })
+                
+                Spacer()
             }
+            .padding()
+            .navigationTitle("Wishlists")
         }
     }
 }
