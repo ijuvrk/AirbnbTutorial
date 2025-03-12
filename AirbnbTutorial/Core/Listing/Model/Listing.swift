@@ -19,6 +19,7 @@ struct Listing: Identifiable, Codable {
     var pricePerNight: Double
     let latitude: Double
     let longitude: Double
+    var imageURL: [String]
     let address: String
     let city: String
     let state: String
