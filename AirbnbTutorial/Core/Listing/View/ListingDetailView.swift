@@ -181,6 +181,7 @@ struct ListingDetailView: View {
         }
         .ignoresSafeArea() //make the image fuller on top
         .padding(.bottom, 70)
+        .toolbar(.hidden, for: .tabBar)
         .overlay(alignment: .bottom) { //for bottom sticky button(content driven overlay) size themselves as the content
             VStack {
                 Divider()
