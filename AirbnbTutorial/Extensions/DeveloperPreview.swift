@@ -8,6 +8,7 @@
 import Foundation
 
 class DeveloperPreview {
+    static let shared = DeveloperPreview()      // static - property belongs to the class only. not the instances. // because we are using mock data we are ensuring that we only use one instance of this data. 
     var listings: [Listing] = [
         .init(
             id: NSUUID().uuidString,
