@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ExploreView: View {
     @State private var showDestinationSearchView = false //gives control to create custom animations, precise control over view switching
+    @StateObject var viewModel = ExploreViewModel(service: ExploreService())    // connects UI with data
     
     var body: some View {
         NavigationStack {
@@ -25,9 +26,9 @@ struct ExploreView: View {
                             }
                         }
                     LazyVStack(spacing: 32) {
-                        ForEach(0 ... 10, id: \.self) { listing in
+                        ForEach(viewModel.listings) { listing in
                             NavigationLink(value: listing) {
-                                ListingItemView()
+                                ListingItemView(listing: listing) // doubt
                                     .frame(height: 400)
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
                             }

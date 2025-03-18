@@ -7,12 +7,14 @@
 
 import Foundation
 
-class ExploreViewModel: ObservableObject {
-    @Published var listings = [Listing]()
-    private let service: ExploreService 
+class ExploreViewModel: ObservableObject { // observableOjbect - swiftUI can detect changes
+    @Published var listings = [Listing]()       // @Published automatically changes the UI when changed (changes in listings etc)
+    private let service: ExploreService
     
-    init(service: ExploreService) {
+    init(service: ExploreService) {         // dependency injection     // can name anything instead of "service"
         self.service = service
+        
+        Task { await fetchListings() }      // to immediately load the listing. since fetchListings() is an async func it used await to fetch. 
     }
     
     func fetchListings() async {
