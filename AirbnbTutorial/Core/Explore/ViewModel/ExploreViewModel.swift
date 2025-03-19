@@ -14,7 +14,7 @@ class ExploreViewModel: ObservableObject { // observableOjbect - swiftUI can det
     init(service: ExploreService) {         // dependency injection     // can name anything instead of "service"
         self.service = service
         
-        Task { await fetchListings() }      // to immediately load the listing. since fetchListings() is an async func it used await to fetch. 
+        Task { await fetchListings() }      // to immediately load the listing. since fetchListings() is an async func it used await to fetch.
     }
     
     func fetchListings() async {
@@ -25,3 +25,5 @@ class ExploreViewModel: ObservableObject { // observableOjbect - swiftUI can det
         }
     }
 }
+
+// Task will trigger the function call, and it will populate the listings above and it's published then because a change is made. view will be refreshed and exploreview will change.
