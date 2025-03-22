@@ -30,7 +30,7 @@ struct ListingItemView: View {
                         Text("Nov 3 - 25")
                             .foregroundStyle(.gray)
                         HStack(spacing: 4) {
-                            Text("\(listing.pricePerNight)")
+                            Text(listing.pricePerNight, format: .currency(code: "USD"))
                                 .fontWeight(.semibold)
                             Text("night")
                         }
@@ -39,7 +39,7 @@ struct ListingItemView: View {
                     
                     Spacer()
                     // rating
-                    RatingView()
+                    RatingView(rating: listing.rating)
                         .foregroundStyle(.black)
                 }
                 .font(.footnote)

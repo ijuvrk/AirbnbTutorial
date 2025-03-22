@@ -9,6 +9,7 @@ import SwiftUI
 import MapKit
 
 struct ListingDetailView: View {
+    let listing: Listing
     
     @Environment(\.dismiss) var dismiss
     
@@ -39,7 +40,7 @@ struct ListingDetailView: View {
                 
                 VStack(alignment: .leading) {
                     HStack(spacing: 2) {
-                        RatingView()
+                        RatingView(rating: listing.rating)
                         Text(" - ")
                         Text("28 Reviews")
                             .fontWeight(.semibold)
@@ -224,5 +225,5 @@ struct ListingDetailView: View {
 }
 
 #Preview {
-    ListingDetailView()
+    ListingDetailView(listing: DeveloperPreview.shared.listings[0])
 }

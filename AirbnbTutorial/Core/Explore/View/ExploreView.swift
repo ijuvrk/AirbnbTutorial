@@ -36,8 +36,8 @@ struct ExploreView: View {
                     }
                     .padding()
                 }
-                .navigationDestination(for: Int.self) { listing in
-                    ListingDetailView()
+                .navigationDestination(for: Listing.self) { listing in
+                    ListingDetailView(listing: listing)
                         .navigationBarBackButtonHidden()
                         .toolbar(.hidden)
                 }
