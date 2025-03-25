@@ -30,8 +30,8 @@ struct ListingItemView: View {
                         Text("Nov 3 - 25")
                             .foregroundStyle(.gray)
                         HStack(spacing: 4) {
-                            Text(listing.pricePerNight, format: .currency(code: "USD"))
-                                .fontWeight(.semibold)
+                            Text("$\(listing.pricePerNight)")
+                            .fontWeight(.semibold)
                             Text("night")
                         }
                         .foregroundStyle(.black)

@@ -16,7 +16,7 @@ struct Listing: Identifiable, Codable, Hashable {
     let noOfBathrooms: Int
     let noOfGuests: Int
     let noOfBeds: Int
-    var pricePerNight: Double
+    var pricePerNight: Int
     let latitude: Double
     let longitude: Double
     var imageURL: [String]
