@@ -25,6 +25,7 @@ struct Listing: Identifiable, Codable, Hashable {
     let state: String
     let title: String
     var rating: Double
+    var noOfReviews: Int
     var features: [ListingFeatures]
     var amenities: [ListingAmenities] // each listing will have multiple listing amenities
     var type: ListingType // can have only one listing type

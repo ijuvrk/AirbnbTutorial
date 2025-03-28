@@ -34,7 +34,7 @@ struct ListingDetailView: View {
             }
             
             VStack(alignment: .leading, spacing: 8) {
-                Text("Miami Villa")
+                Text(listing.title)
                     .font(.title)
                     .fontWeight(.semibold)
                 
@@ -42,7 +42,7 @@ struct ListingDetailView: View {
                     HStack(spacing: 2) {
                         RatingView(rating: listing.rating)
                         Text(" - ")
-                        Text("28 Reviews")
+                        Text("\(listing.noOfReviews) Reviews")
                             .fontWeight(.semibold)
                             .underline()
                     }
@@ -65,17 +65,17 @@ struct ListingDetailView: View {
                     //when a frame is created, it's content's alignment is reset.
                     
                     HStack(spacing: 2) {
-                        Text("4 guests -")
-                        Text("4 bedrooms -")
-                        Text("4 beds -")
-                        Text("3 baths")
+                        Text("\(listing.noOfGuests) guests -")
+                        Text("\(listing.noOfBedrooms) bedrooms -")
+                        Text("\(listing.noOfBeds) beds -")
+                        Text("\(listing.noOfBathrooms) baths")
                     }
                     .font(.caption)
                 }
                 
                 Spacer()
                 
-                Image("profile-1")
+                Image(listing.ownerImageUrl)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 64, height: 64)

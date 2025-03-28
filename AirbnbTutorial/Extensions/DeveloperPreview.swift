@@ -28,6 +28,7 @@ class DeveloperPreview {
             state: "Florida",
             title: "Miami Villa",
             rating: 4.86,
+            noOfReviews: 28,
             features: [.selfCheckin, .superHost],
             amenities: [.wifi, .alarmSystem, .balcony, .laundry, .tv],
             type: .villa
@@ -50,6 +51,7 @@ class DeveloperPreview {
             state: "Hawaii",
             title: "Honolulu Beach House",
             rating: 4.7,
+            noOfReviews: 35,
             features: [.selfCheckin],
             amenities: [.wifi, .tv],
             type: .house
@@ -72,6 +74,7 @@ class DeveloperPreview {
             state: "Florida",
             title: "South Beach Apartment",
             rating: 4.9,
+            noOfReviews: 45,
             features: [.selfCheckin],
             amenities: [.wifi, .tv],
             type: .apartment
@@ -94,6 +97,7 @@ class DeveloperPreview {
             state: "Florida",
             title: "Ocean Drive Villa",
             rating: 4.8,
+            noOfReviews: 20,
             features: [.selfCheckin],
             amenities: [.wifi, .alarmSystem, .balcony, .laundry, .tv, .pool],
             type: .villa
@@ -116,6 +120,7 @@ class DeveloperPreview {
             state: "Florida",
             title: "Art Deco Apartment",
             rating: 4.7,
+            noOfReviews: 49,
             features: [.selfCheckin],
             amenities: [.wifi, .balcony],
             type: .apartment
@@ -138,6 +143,7 @@ class DeveloperPreview {
             state: "New York",
             title: "Cozy Manhattan Apartment",
             rating: 4.92,
+            noOfReviews: 27,
             features: [.superHost],
             amenities: [.wifi, .tv, .kitchen, .office],
             type: .apartment
@@ -160,6 +166,7 @@ class DeveloperPreview {
             state: "Florida",
             title: "Luxury Miami Villa",
             rating: 4.86,
+            noOfReviews: 17,
             features: [.selfCheckin, .superHost],
             amenities: [.wifi, .alarmSystem, .balcony, .laundry, .tv, .pool],
             type: .villa
