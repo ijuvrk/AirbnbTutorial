@@ -197,7 +197,7 @@ struct ListingDetailView: View {
                         Text("Total before taxes")
                             .font(.footnote)
                         
-                        Text("Oct 15 - 20")
+                        Text("\(listing.checkInDate) - 20")
                             .font(.footnote)
                             .fontWeight(.semibold)
                             .underline()
@@ -221,6 +221,18 @@ struct ListingDetailView: View {
             }
             .background(.white)
         }
+    }
+    
+    func formatDateRange(_ checkIn: Date,_ checkOut: Date) -> String {
+        let calendar = Calendar.current
+        
+        let checkInMonth = calendar.component(.month, from: checkIn)
+        let checkInDay = calendar.component(.day, from: checkIn)
+        let checkOutMonth = calendar.component(.month, from: checkOut)
+        let checkOutDay = calendar.component(.day, from: checkOut)
+        
+        let monthFormatter = DateFormatter()
+        monthFormatter.dateFormat = "MMM"
     }
 }
 

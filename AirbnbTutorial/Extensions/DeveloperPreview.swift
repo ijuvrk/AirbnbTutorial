@@ -31,7 +31,9 @@ class DeveloperPreview {
             noOfReviews: 28,
             features: [.selfCheckin, .superHost],
             amenities: [.wifi, .alarmSystem, .balcony, .laundry, .tv],
-            type: .villa
+            type: .villa,
+            checkInDate: createDate(year: 2025, month: 3, day: 30),
+            checkOutDate: createDate(year: 2025, month: 4, day: 6)
         ),
         .init(
             id: NSUUID().uuidString,
@@ -54,7 +56,9 @@ class DeveloperPreview {
             noOfReviews: 35,
             features: [.selfCheckin],
             amenities: [.wifi, .tv],
-            type: .house
+            type: .house,
+            checkInDate: createDate(year: 2025, month: 3, day: 31),
+            checkOutDate: createDate(year: 2025, month: 4, day: 6)
         ),
         .init(
             id: NSUUID().uuidString,
@@ -77,7 +81,9 @@ class DeveloperPreview {
             noOfReviews: 45,
             features: [.selfCheckin],
             amenities: [.wifi, .tv],
-            type: .apartment
+            type: .apartment,
+            checkInDate: createDate(year: 2025, month: 3, day: 31),
+            checkOutDate: createDate(year: 2025, month: 4, day: 7)
         ),
         .init(
             id: NSUUID().uuidString,
@@ -100,7 +106,9 @@ class DeveloperPreview {
             noOfReviews: 20,
             features: [.selfCheckin],
             amenities: [.wifi, .alarmSystem, .balcony, .laundry, .tv, .pool],
-            type: .villa
+            type: .villa,
+            checkInDate: createDate(year: 2025, month: 3, day: 30),
+            checkOutDate: createDate(year: 2025, month: 4, day: 8)
         ),
         .init(
             id: NSUUID().uuidString,
@@ -123,7 +131,9 @@ class DeveloperPreview {
             noOfReviews: 49,
             features: [.selfCheckin],
             amenities: [.wifi, .balcony],
-            type: .apartment
+            type: .apartment,
+            checkInDate: createDate(year: 2025, month: 4, day: 1),
+            checkOutDate: createDate(year: 2025, month: 4, day: 10)
         ),
         .init(
             id: NSUUID().uuidString,
@@ -147,8 +157,8 @@ class DeveloperPreview {
             features: [.superHost],
             amenities: [.wifi, .tv, .kitchen, .office],
             type: .apartment,
-            checkInDate: createDate(year: 2025, month: 3, day: 10),
-            checkOutDate: createDate(year: 2025, month: 3, day: 15)
+            checkInDate: createDate(year: 2025, month: 3, day: 30),
+            checkOutDate: createDate(year: 2025, month: 3, day: 31)
         ),
         .init(
             id: NSUUID().uuidString,
@@ -171,7 +181,9 @@ class DeveloperPreview {
             noOfReviews: 17,
             features: [.selfCheckin, .superHost],
             amenities: [.wifi, .alarmSystem, .balcony, .laundry, .tv, .pool],
-            type: .villa
+            type: .villa,
+            checkInDate: createDate(year: 2025, month: 3, day: 31),
+            checkOutDate: createDate(year: 2025, month: 4, day: 5)
         )
     ]
     
