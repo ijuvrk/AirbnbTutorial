@@ -146,7 +146,9 @@ class DeveloperPreview {
             noOfReviews: 27,
             features: [.superHost],
             amenities: [.wifi, .tv, .kitchen, .office],
-            type: .apartment
+            type: .apartment,
+            checkInDate: createDate(year: 2025, month: 3, day: 10),
+            checkOutDate: createDate(year: 2025, month: 3, day: 15)
         ),
         .init(
             id: NSUUID().uuidString,
@@ -172,4 +174,10 @@ class DeveloperPreview {
             type: .villa
         )
     ]
+    
+    private static func createDate(year: Int, month: Int, day: Int) -> Date {
+        let components = DateComponents(year: year, month: month, day: day)
+        return Calendar.current.date(from: components)!
+    } // without static keyword. methods inside a class are instance methods.
+        // made it static. because property initializers run before the instance is fully created.
 }

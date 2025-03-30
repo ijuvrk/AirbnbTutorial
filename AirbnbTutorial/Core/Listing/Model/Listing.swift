@@ -29,6 +29,8 @@ struct Listing: Identifiable, Codable, Hashable {
     var features: [ListingFeatures]
     var amenities: [ListingAmenities] // each listing will have multiple listing amenities
     var type: ListingType // can have only one listing type
+    var checkInDate: Date
+    var checkOutDate: Date
 }
 
 enum ListingFeatures: Int, Codable, Identifiable, Hashable {
