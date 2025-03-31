@@ -197,7 +197,8 @@ struct ListingDetailView: View {
                         Text("Total before taxes")
                             .font(.footnote)
                         
-                        Text("\(listing.checkInDate) - 20")
+//                        Text("Oct 20 - 20")
+                        Text("\(formatDate(listing.checkInDate, listing.checkOutDate))")
                             .font(.footnote)
                             .fontWeight(.semibold)
                             .underline()
@@ -270,7 +271,7 @@ struct ListingDetailView: View {
         }
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM, d"
+        dateFormatter.dateFormat = "MMM d"
         
         let checkInString = dateFormatter.string(from: checkIn)
         let checkOutString = dateFormatter.string(from: checkOut)
