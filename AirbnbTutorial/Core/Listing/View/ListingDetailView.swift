@@ -197,7 +197,7 @@ struct ListingDetailView: View {
                         Text("Total before taxes")
                             .font(.footnote)
                         
-                        Text("\(formatDate(listing.checkInDate, listing.checkOutDate))")
+                        Text("\(Date.formatDate(listing.checkInDate, listing.checkOutDate))")
                             .font(.footnote)
                             .fontWeight(.semibold)
                             .underline()
@@ -220,67 +220,6 @@ struct ListingDetailView: View {
                 .padding(.horizontal, 32)
             }
             .background(.white)
-        }
-    }
-    
-//    func formatDateRange(_ checkIn: Date,_ checkOut: Date) -> String {
-//        let calendar = Calendar.current // accesses user's default calendar system
-//        
-//        // Get components
-//        let checkInMonth = calendar.component(.month, from: checkIn)
-//        let checkInDay = calendar.component(.day, from: checkIn)
-//        let checkOutMonth = calendar.component(.month, from: checkOut)
-//        let checkOutDay = calendar.component(.day, from: checkOut)
-//        
-//        let monthFormatter = DateFormatter()
-//        monthFormatter.dateFormat = "MMM"
-//        
-//        // can't directly format integer to month using DateFormatter()
-//        var monthComponents = DateComponents() // creating DateComponents object
-//        monthComponents.month = checkInMonth // setting just month field
-//        // convert checkInMonthComponents into a date object
-//        guard let checkInMonthDate = calendar.date(from: monthComponents) else {
-//            return "invalid date"
-//        }
-//        // using dateformatter to extract month name from the date
-//        let checkInMonthString = monthFormatter.string(from: checkInMonthDate)
-//        
-//        // comparing to use eg: oct 15 - 20 or oct 15 - nov 5
-//        if checkInMonth == checkOutMonth {
-//            return "\(checkInMonthString) \(checkInDay) - \(checkOutDay)"
-//        } else {
-//            monthComponents.month = checkOutMonth
-//            guard let checkOutMonthDate = calendar.date(from: monthComponents) else {
-//                return "invalid date"
-//            }
-//            let checkOutMonthString = monthFormatter.string(from: checkOutMonthDate)
-//            
-//            return "\(checkInMonthString) \(checkInDay) - (\(checkOutMonthString) \(checkOutDay)"
-//        }
-//    }
-    
-    // different way to implement date formatting
-    func formatDate(_ checkIn: Date?, _ checkOut: Date?) -> String {
-        guard let checkIn = checkIn, let checkOut = checkOut else {
-            return "invalid dates"
-        }
-        
-        guard checkOut >= checkIn else {
-            return "invalid dates"
-        }
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d"
-        
-        let checkInString = dateFormatter.string(from: checkIn)
-        let checkOutString = dateFormatter.string(from: checkOut)
-        let checkInMonth = Calendar.current.component(.month, from: checkIn)
-        let checkOutMonth = Calendar.current.component(.month, from: checkOut)
-        
-        if checkInMonth == checkOutMonth {
-            return "\(checkInString) - \(Calendar.current.component(.day, from: checkOut))"
-        } else {
-            return "\(checkInString) - \(checkOutString)"
         }
     }
 }

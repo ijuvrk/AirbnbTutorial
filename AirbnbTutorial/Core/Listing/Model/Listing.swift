@@ -33,7 +33,7 @@ struct Listing: Identifiable, Codable, Hashable {
     var checkOutDate: Date
     
     var numberOfDays: Int {
-        checkInDate.daysBetween(to: checkOutDate)
+        checkInDate.daysBetween(to: checkOutDate) // if daysBetween was not and extension to Class, then we are not able to use dot syntax
     }
     var totalPrice: Int {
         pricePerNight * numberOfDays
