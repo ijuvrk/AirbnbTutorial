@@ -224,8 +224,9 @@ struct ListingDetailView: View {
     }
     
     func formatDateRange(_ checkIn: Date,_ checkOut: Date) -> String {
-        let calendar = Calendar.current
+        let calendar = Calendar.current // accesses user's default calendar system
         
+        // Get components
         let checkInMonth = calendar.component(.month, from: checkIn)
         let checkInDay = calendar.component(.day, from: checkIn)
         let checkOutMonth = calendar.component(.month, from: checkOut)
@@ -233,6 +234,29 @@ struct ListingDetailView: View {
         
         let monthFormatter = DateFormatter()
         monthFormatter.dateFormat = "MMM"
+        
+        // can't directly format integer to month using DateFormatter()
+        var monthComponents = DateComponents() // creating DateComponents object
+        monthComponents.month = checkInMonth // setting just month field
+        // convert checkInMonthComponents into a date object
+        guard let checkInMonthDate = calendar.date(from: monthComponents) else {
+            return "invalid date"
+        }
+        // using dateformatter to extract month name from the date
+        let checkInMonthString = monthFormatter.string(from: checkInMonthDate)
+        
+        // comparing to use eg: oct 15 - 20 or oct 15 - nov 5
+        if checkInMonth == checkOutMonth {
+            return "\(checkInMonthString) \(checkInDay) - \(checkOutDay)"
+        } else {
+            monthComponents.month = checkOutMonth
+            guard let checkOutMonthDate = calendar.date(from: monthComponents) else {
+                return "invalid date"
+            }
+            let checkOutMonthString = monthFormatter.string(from: checkOutMonthDate)
+            
+            return "\(checkInMonthString) \(checkInDay) - (\(checkOutMonthString) \(checkOutDay)"
+        }
     }
 }
 
