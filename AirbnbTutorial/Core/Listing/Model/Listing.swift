@@ -31,6 +31,13 @@ struct Listing: Identifiable, Codable, Hashable {
     var type: ListingType // can have only one listing type
     var checkInDate: Date
     var checkOutDate: Date
+    
+    var numberOfDays: Int {
+        checkInDate.daysBetween(to: checkOutDate)
+    }
+    var totalPrice: Int {
+        pricePerNight * numberOfDays
+    }
 }
 
 enum ListingFeatures: Int, Codable, Identifiable, Hashable {
@@ -143,4 +150,6 @@ enum ListingType: Int, Codable, Identifiable, Hashable {
     }
     
     var id: Int { self.rawValue }
+    
+    
 }

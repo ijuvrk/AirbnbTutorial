@@ -17,6 +17,7 @@
 		ABAFC9AF2D7CCAB8003BCD78 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFC9AE2D7CCAB8003BCD78 /* MainTabView.swift */; };
 		ABAFC9B52D7CD2DA003BCD78 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFC9B42D7CD2DA003BCD78 /* Listing.swift */; };
 		ABAFC9B72D81AB4B003BCD78 /* DeveloperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFC9B62D81AB4B003BCD78 /* DeveloperPreview.swift */; };
+		ABC3ECB02D9AAA2C009B5A16 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3ECAF2D9AAA21009B5A16 /* DateExtensions.swift */; };
 		ABCF860C2D70A7E200872850 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABCF86062D70A7E200872850 /* Preview Assets.xcassets */; };
 		ABCF860D2D70A7E200872850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABCF86092D70A7E200872850 /* Assets.xcassets */; };
 		ABCF860E2D70A7E200872850 /* AirbnbTutorialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF86082D70A7E200872850 /* AirbnbTutorialApp.swift */; };
@@ -41,6 +42,7 @@
 		ABAFC9AE2D7CCAB8003BCD78 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		ABAFC9B42D7CD2DA003BCD78 /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		ABAFC9B62D81AB4B003BCD78 /* DeveloperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperPreview.swift; sourceTree = "<group>"; };
+		ABC3ECAF2D9AAA21009B5A16 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		ABCF85D32D6F7FA000872850 /* AirbnbTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirbnbTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABCF86062D70A7E200872850 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ABCF86082D70A7E200872850 /* AirbnbTutorialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbTutorialApp.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		ABCF86122D70A82F00872850 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				ABC3ECAF2D9AAA21009B5A16 /* DateExtensions.swift */,
 				ABAFC9B62D81AB4B003BCD78 /* DeveloperPreview.swift */,
 			);
 			path = Extensions;
@@ -342,6 +345,7 @@
 				ABAFC9A72D7B6FDA003BCD78 /* ProfileView.swift in Sources */,
 				ABCF86212D72453500872850 /* ListingItemView.swift in Sources */,
 				ABCF862A2D7502FD00872850 /* RatingView.swift in Sources */,
+				ABC3ECB02D9AAA2C009B5A16 /* DateExtensions.swift in Sources */,
 				ABAFC9AD2D7B7D46003BCD78 /* PrimaryLoginButtonView.swift in Sources */,
 				AB3BBBFE2D84C37B001434F2 /* ExploreService.swift in Sources */,
 				ABCF861F2D70A98400872850 /* ExploreView.swift in Sources */,

@@ -190,14 +190,13 @@ struct ListingDetailView: View {
                 
                 HStack {
                     VStack(alignment: .leading){
-                        Text("$\(listing.pricePerNight)")
+                        Text("$\(listing.totalPrice)")
                             .font(.subheadline)
                             .fontWeight(.semibold)
                         
                         Text("Total before taxes")
                             .font(.footnote)
                         
-//                        Text("Oct 20 - 20")
                         Text("\(formatDate(listing.checkInDate, listing.checkOutDate))")
                             .font(.footnote)
                             .fontWeight(.semibold)
