@@ -29,15 +29,11 @@ struct Listing: Identifiable, Codable, Hashable {
     var features: [ListingFeatures]
     var amenities: [ListingAmenities] // each listing will have multiple listing amenities
     var type: ListingType // can have only one listing type
+    
+    // have to remove
     var checkInDate: Date
     var checkOutDate: Date
     
-    var numberOfDays: Int {
-        checkInDate.daysBetween(to: checkOutDate) // if daysBetween was not and extension to Class, then we are not able to use dot syntax
-    }
-    var totalPrice: Int {
-        pricePerNight * numberOfDays
-    }
 }
 
 enum ListingFeatures: Int, Codable, Identifiable, Hashable {

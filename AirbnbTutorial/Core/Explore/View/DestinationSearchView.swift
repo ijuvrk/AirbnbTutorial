@@ -15,10 +15,11 @@ enum DestinationSearchOptions {
 
 struct DestinationSearchView: View {
     @Binding var show: Bool
+    @Binding var fromDate: Date
+    @Binding var toDate: Date
+    
     @State private var destination = ""
     @State private var selectedOption: DestinationSearchOptions = .location //to re-render the view when the state changes
-    @State private var fromDate = Date()
-    @State private var toDate = Date()
     @State private var noOfGuests: Int = 0
     
     
@@ -140,7 +141,9 @@ struct DestinationSearchView: View {
 }
 
 #Preview {
-    DestinationSearchView(show: .constant(false)) //just for preview, dummy binding since there is no parentview while on preview mode
+    DestinationSearchView(show: .constant(false),
+                          fromDate: .constant(Date()),
+                          toDate: .constant(Date())) //just for preview, dummy binding since there is no parentview while on preview mode
 }
 
 struct CollapsablePickerView: View {

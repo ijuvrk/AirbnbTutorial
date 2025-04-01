@@ -10,6 +10,8 @@ import MapKit
 
 struct ListingDetailView: View {
     let listing: Listing
+    let checkInDate: Date
+    let checkOutDate: Date 
     
     @Environment(\.dismiss) var dismiss
     
@@ -190,7 +192,7 @@ struct ListingDetailView: View {
                 
                 HStack {
                     VStack(alignment: .leading){
-                        Text("$\(listing.totalPrice)")
+                        Text("$\(listing.totalPrice(from: checkInDate, to: checkOutDate))")
                             .font(.subheadline)
                             .fontWeight(.semibold)
                         
@@ -225,5 +227,5 @@ struct ListingDetailView: View {
 }
 
 #Preview {
-    ListingDetailView(listing: DeveloperPreview.shared.listings[2])
+    ListingDetailView(listing: DeveloperPreview.shared.listings[2], checkInDate: Date(), checkOutDate: Date())
 }

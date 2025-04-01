@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ListingItemView: View {
     let listing: Listing
+    let checkInDate: Date
+    let checkOutDate: Date 
     
     var body: some View {
         VStack(spacing: 8) {
@@ -27,7 +29,7 @@ struct ListingItemView: View {
                             .foregroundStyle(.black)
                         Text("12 mi away")
                             .foregroundStyle(.gray)
-                        Text("\(Date.formatDate(listing.checkInDate, listing.checkOutDate))")
+                        Text("\(Date.formatDate(checkInDate, checkOutDate))")
                             .foregroundStyle(.gray)
                         HStack(spacing: 4) {
                             Text("$\(listing.pricePerNight)")
@@ -49,6 +51,6 @@ struct ListingItemView: View {
     }
 
     #Preview {
-        ListingItemView(listing: DeveloperPreview.shared.listings[0])
+        ListingItemView(listing: DeveloperPreview.shared.listings[0], checkInDate: Date(), checkOutDate: Date())
     }
 
