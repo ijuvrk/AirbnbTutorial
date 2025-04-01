@@ -27,7 +27,7 @@ struct ListingItemView: View {
                             .foregroundStyle(.black)
                         Text("12 mi away")
                             .foregroundStyle(.gray)
-                        Text("Nov 3 - 25")
+                        Text("\(Date.formatDate(listing.checkInDate, listing.checkOutDate))")
                             .foregroundStyle(.gray)
                         HStack(spacing: 4) {
                             Text("$\(listing.pricePerNight)")
