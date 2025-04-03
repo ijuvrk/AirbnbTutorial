@@ -22,7 +22,7 @@ class ExploreViewModel: ObservableObject { // observableOjbect - swiftUI can det
             let fetchedListings = try await service.fetchListings()
             
             await MainActor.run {
-                self.listings = fetchedListings
+                self.listings = fetchedListings 
             }
         } catch {
          print("DEBUG: Failed to fetch listings with error: \(error.localizedDescription)")

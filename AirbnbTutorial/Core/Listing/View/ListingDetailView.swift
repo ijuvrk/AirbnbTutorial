@@ -199,7 +199,7 @@ struct ListingDetailView: View {
                         Text("Total before taxes")
                             .font(.footnote)
                         
-                        Text("\(Date.formatDate(listing.checkInDate, listing.checkOutDate))")
+                        Text("\(Date.formatDate(checkInDate, checkOutDate))")
                             .font(.footnote)
                             .fontWeight(.semibold)
                             .underline()

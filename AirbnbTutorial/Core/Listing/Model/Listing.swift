@@ -29,16 +29,11 @@ struct Listing: Identifiable, Codable, Hashable {
     var features: [ListingFeatures]
     var amenities: [ListingAmenities] // each listing will have multiple listing amenities
     var type: ListingType // can have only one listing type
-    
-    // have to remove
-    var checkInDate: Date
-    var checkOutDate: Date
-    
 }
 
 enum ListingFeatures: Int, Codable, Identifiable, Hashable {
-    case selfCheckin
-    case superHost
+    case selfCheckin = 0
+    case superHost = 1
     
     var title: String {
         switch self {
@@ -72,14 +67,14 @@ enum ListingFeatures: Int, Codable, Identifiable, Hashable {
 }
 
 enum ListingAmenities: Int, Codable, Identifiable, Hashable {
-    case pool
-    case kitchen
-    case wifi
-    case laundry
-    case tv
-    case alarmSystem
-    case office
-    case balcony
+    case pool = 0
+    case kitchen = 1
+    case wifi = 2
+    case laundry = 3
+    case tv = 4
+    case alarmSystem = 5
+    case office = 6
+    case balcony = 7
     
     var title: String {
         switch self {
@@ -127,10 +122,10 @@ enum ListingAmenities: Int, Codable, Identifiable, Hashable {
 }
 
 enum ListingType: Int, Codable, Identifiable, Hashable {
-    case apartment
-    case house
-    case townHouse
-    case villa
+    case apartment = 0
+    case house = 1
+    case townHouse = 2
+    case villa = 3
     
     var description: String {
         switch self {

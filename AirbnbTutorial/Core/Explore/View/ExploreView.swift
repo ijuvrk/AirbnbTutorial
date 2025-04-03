@@ -39,6 +39,16 @@ struct ExploreView: View {
                                     .frame(height: 400)
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
                             }
+//                            Button {
+//                                    print("About to navigate to listing: \(listing.id)")
+//                                    // Don't navigate yet, just see if the button works
+//                                } label: {
+//                                    ListingItemView(listing: listing,
+//                                                    checkInDate: selectedFromDate,
+//                                                    checkOutDate: selectedToDate)
+//                                        .frame(height: 100)
+//                                        .clipShape(RoundedRectangle(cornerRadius: 10))
+//                                }
                         }
                     }
                     .padding()

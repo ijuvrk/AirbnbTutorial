@@ -8,7 +8,7 @@
 import Foundation
 
 extension Listing {
-    func totalPrice (from: Date, to: Date) -> Int {
+    func totalPrice(from: Date, to: Date) -> Int {
         let numberOfDays = from.daysBetween(to: to)
         return pricePerNight * numberOfDays
     }

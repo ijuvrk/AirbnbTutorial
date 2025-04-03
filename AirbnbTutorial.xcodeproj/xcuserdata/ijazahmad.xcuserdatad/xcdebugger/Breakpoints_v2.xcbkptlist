@@ -36,5 +36,65 @@
             landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C4CA2E9-09A2-4CE3-B204-94AF4CB253AA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AirbnbTutorial/Core/Explore/ViewModel/ExploreViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "init(service:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4C4CA2E9-09A2-4CE3-B204-94AF4CB253AA - 94cf5446ffe9eab8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AirbnbTutorial.ExploreViewModel.init(service: AirbnbTutorial.ExploreService) -&gt; AirbnbTutorial.ExploreViewModel"
+                  moduleName = "AirbnbTutorial.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ijazahmad/Desktop/Projects/AirbnbTutorial/AirbnbTutorial/Core/Explore/ViewModel/ExploreViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17">
+               </Location>
+               <Location
+                  uuid = "4C4CA2E9-09A2-4CE3-B204-94AF4CB253AA - 34b2517613935f98"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () async -&gt; () in AirbnbTutorial.ExploreViewModel.init(service: AirbnbTutorial.ExploreService) -&gt; AirbnbTutorial.ExploreViewModel"
+                  moduleName = "AirbnbTutorial.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ijazahmad/Desktop/Projects/AirbnbTutorial/AirbnbTutorial/Core/Explore/ViewModel/ExploreViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17">
+               </Location>
+               <Location
+                  uuid = "4C4CA2E9-09A2-4CE3-B204-94AF4CB253AA - ce8a31cf4d9d2bc2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for closure #1 () async -&gt; () in AirbnbTutorial.ExploreViewModel.init(service: AirbnbTutorial.ExploreService) -&gt; AirbnbTutorial.ExploreViewModel"
+                  moduleName = "AirbnbTutorial.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ijazahmad/Desktop/Projects/AirbnbTutorial/AirbnbTutorial/Core/Explore/ViewModel/ExploreViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

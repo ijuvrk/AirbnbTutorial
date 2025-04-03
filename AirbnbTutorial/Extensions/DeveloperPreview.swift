@@ -31,9 +31,7 @@ class DeveloperPreview {
             noOfReviews: 28,
             features: [.selfCheckin, .superHost],
             amenities: [.wifi, .alarmSystem, .balcony, .laundry, .tv],
-            type: .villa,
-            checkInDate: createDate(year: 2025, month: 3, day: 30),
-            checkOutDate: createDate(year: 2025, month: 4, day: 6)
+            type: .villa
         ),
         .init(
             id: NSUUID().uuidString,
@@ -56,9 +54,7 @@ class DeveloperPreview {
             noOfReviews: 35,
             features: [.selfCheckin],
             amenities: [.wifi, .tv],
-            type: .house,
-            checkInDate: createDate(year: 2025, month: 3, day: 31),
-            checkOutDate: createDate(year: 2025, month: 4, day: 6)
+            type: .house
         ),
         .init(
             id: NSUUID().uuidString,
@@ -81,9 +77,7 @@ class DeveloperPreview {
             noOfReviews: 45,
             features: [.selfCheckin],
             amenities: [.wifi, .tv],
-            type: .apartment,
-            checkInDate: createDate(year: 2025, month: 3, day: 31),
-            checkOutDate: createDate(year: 2025, month: 4, day: 7)
+            type: .apartment
         ),
         .init(
             id: NSUUID().uuidString,
@@ -106,9 +100,7 @@ class DeveloperPreview {
             noOfReviews: 20,
             features: [.selfCheckin],
             amenities: [.wifi, .alarmSystem, .balcony, .laundry, .tv, .pool],
-            type: .villa,
-            checkInDate: createDate(year: 2025, month: 3, day: 30),
-            checkOutDate: createDate(year: 2025, month: 4, day: 8)
+            type: .villa
         ),
         .init(
             id: NSUUID().uuidString,
@@ -131,9 +123,7 @@ class DeveloperPreview {
             noOfReviews: 49,
             features: [.selfCheckin],
             amenities: [.wifi, .balcony],
-            type: .apartment,
-            checkInDate: createDate(year: 2025, month: 4, day: 1),
-            checkOutDate: createDate(year: 2025, month: 4, day: 10)
+            type: .apartment
         ),
         .init(
             id: NSUUID().uuidString,
@@ -156,9 +146,7 @@ class DeveloperPreview {
             noOfReviews: 27,
             features: [.superHost],
             amenities: [.wifi, .tv, .kitchen, .office],
-            type: .apartment,
-            checkInDate: createDate(year: 2025, month: 3, day: 30),
-            checkOutDate: createDate(year: 2025, month: 3, day: 31)
+            type: .apartment
         ),
         .init(
             id: NSUUID().uuidString,
@@ -181,15 +169,7 @@ class DeveloperPreview {
             noOfReviews: 17,
             features: [.selfCheckin, .superHost],
             amenities: [.wifi, .alarmSystem, .balcony, .laundry, .tv, .pool],
-            type: .villa,
-            checkInDate: createDate(year: 2025, month: 3, day: 31),
-            checkOutDate: createDate(year: 2025, month: 4, day: 5)
+            type: .villa
         )
     ]
-    
-    private static func createDate(year: Int, month: Int, day: Int) -> Date {
-        let components = DateComponents(year: year, month: month, day: day)
-        return Calendar.current.date(from: components)!
-    } // without static keyword. methods inside a class are instance methods.
-        // made it static. because property initializers run before the instance is fully created.
 }
