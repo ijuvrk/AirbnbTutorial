@@ -32,8 +32,8 @@ struct Listing: Identifiable, Codable, Hashable {
 }
 
 enum ListingFeatures: Int, Codable, Identifiable, Hashable {
-    case selfCheckin = 0
-    case superHost = 1
+    case selfCheckin
+    case superHost
     
     var title: String {
         switch self {
@@ -67,14 +67,14 @@ enum ListingFeatures: Int, Codable, Identifiable, Hashable {
 }
 
 enum ListingAmenities: Int, Codable, Identifiable, Hashable {
-    case pool = 0
-    case kitchen = 1
-    case wifi = 2
-    case laundry = 3
-    case tv = 4
-    case alarmSystem = 5
-    case office = 6
-    case balcony = 7
+    case pool
+    case kitchen
+    case wifi
+    case laundry
+    case tv
+    case alarmSystem
+    case office
+    case balcony
     
     var title: String {
         switch self {
@@ -122,10 +122,10 @@ enum ListingAmenities: Int, Codable, Identifiable, Hashable {
 }
 
 enum ListingType: Int, Codable, Identifiable, Hashable {
-    case apartment = 0
-    case house = 1
-    case townHouse = 2
-    case villa = 3
+    case apartment
+    case house
+    case townHouse
+    case villa 
     
     var description: String {
         switch self {
