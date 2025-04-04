@@ -11,7 +11,7 @@ import MapKit
 struct ListingDetailView: View {
     let listing: Listing
     let checkInDate: Date
-    let checkOutDate: Date 
+    let checkOutDate: Date
     
     @Environment(\.dismiss) var dismiss
     

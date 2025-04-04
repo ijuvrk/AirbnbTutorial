@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ExploreView: View {
+    
     @State private var showDestinationSearchView = false //gives control to create custom animations, precise control over view switching
     @StateObject var viewModel = ExploreViewModel(service: ExploreService())    // connects UI with data
     
@@ -39,25 +40,15 @@ struct ExploreView: View {
                                     .frame(height: 400)
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
                             }
-//                            Button {
-//                                    print("About to navigate to listing: \(listing.id)")
-//                                    // Don't navigate yet, just see if the button works
-//                                } label: {
-//                                    ListingItemView(listing: listing,
-//                                                    checkInDate: selectedFromDate,
-//                                                    checkOutDate: selectedToDate)
-//                                        .frame(height: 100)
-//                                        .clipShape(RoundedRectangle(cornerRadius: 10))
-//                                }
                         }
                     }
                     .padding()
                 }
                 .navigationDestination(for: Listing.self) { listing in
-                    ListingDetailView(listing: listing, checkInDate: selectedFromDate,
-                                      checkOutDate: selectedToDate)
-                    .navigationBarBackButtonHidden()
-                    .toolbar(.hidden)
+                        ListingDetailView(listing: listing, checkInDate: selectedFromDate,
+                                          checkOutDate: selectedToDate)
+                        .navigationBarBackButtonHidden()
+                        .toolbar(.hidden)
                 }
             }
             }
