@@ -13,6 +13,8 @@ struct ListingDetailView: View {
     let checkInDate: Date
     let checkOutDate: Date
     
+    @State private var mapPosition: MapCameraPosition?
+    
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -176,7 +178,7 @@ struct ListingDetailView: View {
                 Text("Where you'll be")
                     .font(.headline)
                 
-                Map()
+                ListingMapView(latitude: listing.latitude, longitude: listing.longitude)
                     .frame(height: 200)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
             }

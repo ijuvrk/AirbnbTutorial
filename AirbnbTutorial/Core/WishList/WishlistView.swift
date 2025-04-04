@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WishlistView: View {
     var body: some View {
-        NavigationStack {
+
             VStack(alignment: .leading, spacing: 32) {
                 
                 VStack(alignment: .leading, spacing: 4) {
@@ -32,7 +32,7 @@ struct WishlistView: View {
             .navigationTitle("Wishlists")
         }
     }
-}
+
 
 #Preview {
     WishlistView()

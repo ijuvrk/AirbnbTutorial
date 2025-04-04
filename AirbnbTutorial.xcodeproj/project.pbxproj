@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AB3BBBFC2D84BF3E001434F2 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3BBBFB2D84BF3E001434F2 /* ExploreViewModel.swift */; };
 		AB3BBBFE2D84C37B001434F2 /* ExploreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3BBBFD2D84C37B001434F2 /* ExploreService.swift */; };
+		AB849BF12DA01EB80000454D /* ListingMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB849BF02DA01EB80000454D /* ListingMapView.swift */; };
 		ABAFC9A52D7B6F83003BCD78 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ABAFC9A42D7B6F83003BCD78 /* README.md */; };
 		ABAFC9A72D7B6FDA003BCD78 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFC9A62D7B6FDA003BCD78 /* ProfileView.swift */; };
 		ABAFC9A92D7B7473003BCD78 /* ProfileOptionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFC9A82D7B7473003BCD78 /* ProfileOptionRowView.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		AB3BBBFB2D84BF3E001434F2 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		AB3BBBFD2D84C37B001434F2 /* ExploreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreService.swift; sourceTree = "<group>"; };
+		AB849BF02DA01EB80000454D /* ListingMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingMapView.swift; sourceTree = "<group>"; };
 		ABAFC9A42D7B6F83003BCD78 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		ABAFC9A62D7B6FDA003BCD78 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		ABAFC9A82D7B7473003BCD78 /* ProfileOptionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionRowView.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 		ABCF86192D70A8F200872850 /* Map View */ = {
 			isa = PBXGroup;
 			children = (
+				AB849BF02DA01EB80000454D /* ListingMapView.swift */,
 			);
 			path = "Map View";
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				ABCF86212D72453500872850 /* ListingItemView.swift in Sources */,
 				ABCF862A2D7502FD00872850 /* RatingView.swift in Sources */,
 				ABC3ECB52D9CA90C009B5A16 /* ListingExtensions.swift in Sources */,
+				AB849BF12DA01EB80000454D /* ListingMapView.swift in Sources */,
 				ABC3ECB02D9AAA2C009B5A16 /* DateExtensions.swift in Sources */,
 				ABAFC9AD2D7B7D46003BCD78 /* PrimaryLoginButtonView.swift in Sources */,
 				AB3BBBFE2D84C37B001434F2 /* ExploreService.swift in Sources */,
