@@ -34,7 +34,7 @@ struct ListingMapView: View {
     var body: some View {
         
         
-        Map {
+        Map(position: $mapPosition) {
             Marker("Location", coordinate: CLLocationCoordinate2D(
                 latitude: latitude,
                 longitude: longitude
