@@ -18,21 +18,20 @@ struct ListingMapView: View {
             self.latitude = latitude
             self.longitude = longitude
             
-            let coordinate = CLLocationCoordinate2D(
+            let coordinate = CLLocationCoordinate2D( // coordinate object
                 latitude: latitude,
                 longitude: longitude
             )
             
-            _mapPosition = State(initialValue: .region(
-                MKCoordinateRegion(
-                    center: coordinate,
-                    span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            _mapPosition = State(initialValue: .region( // .reigion - method on MapCameraPosition
+                MKCoordinateRegion( // defines a rectangular area on map
+                    center: coordinate, // center point of visible area
+                    span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01) // size of area to display. .01 - 1.11km N-S & 1.11km E-W
                 )
                 ))
         }
     
     var body: some View {
-        
         
         Map(position: $mapPosition) {
             Marker("Location", coordinate: CLLocationCoordinate2D(
