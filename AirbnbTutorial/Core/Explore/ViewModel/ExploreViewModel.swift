@@ -9,6 +9,10 @@ import Foundation
 
 class ExploreViewModel: ObservableObject { // observableOjbect - swiftUI can detect changes
     @Published var listings = [Listing]()       // @Published automatically changes the UI when changed (changes in listings etc)
+    
+    @Published var searchLocation = "" // store the search query
+    @Published var filteredListings = [Listing]()
+    
     private let service: ExploreService
     
     init(service: ExploreService) {         // dependency injection     // can name anything instead of "service"
@@ -22,10 +26,25 @@ class ExploreViewModel: ObservableObject { // observableOjbect - swiftUI can det
             let fetchedListings = try await service.fetchListings()
             
             await MainActor.run {
-                self.listings = fetchedListings 
+                self.listings = fetchedListings
+                self.filteredListings = fetchedListings // initialize with all listings
+                
+                // our original listings remain unchanged as our "source of truth"
             }
         } catch {
          print("DEBUG: Failed to fetch listings with error: \(error.localizedDescription)")
+        }
+    }
+    
+    func filterListingsByLocation() {
+        if searchLocation.isEmpty {
+//            self.listings = listings
+            filteredListings = listings
+        } else {
+            filteredListings = listings.filter { listing in
+                listing.city.lowercased().contains(searchLocation.lowercased()) ||
+                listing.state.lowercased().contains(searchLocation.lowercased())
+            }
         }
     }
 }
