@@ -21,9 +21,12 @@ struct ExploreView: View {
             if showDestinationSearchView {
                 DestinationSearchView(show: $showDestinationSearchView,
                                       fromDate: $selectedFromDate,
-                                      toDate: $selectedToDate) //$ creates a binding with state. "show" is binding variable.
+                                      toDate: $selectedToDate)
+                .environmentObject(viewModel)
+                //$ creates a binding with state. "show" is binding variable.
                 //binding is required
-            } else {
+            }
+            else {
                 ScrollView {
                     SearchAndFilterBar()
                         .onTapGesture {
@@ -32,7 +35,7 @@ struct ExploreView: View {
                             }
                         }
                     LazyVStack(spacing: 32) {
-                        ForEach(viewModel.listings) { listing in
+                        ForEach(viewModel.filteredListings) { listing in
                             NavigationLink(value: listing) {
                                 ListingItemView(listing: listing,
                                                 checkInDate: selectedFromDate,
