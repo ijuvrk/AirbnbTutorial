@@ -22,11 +22,15 @@ struct DestinationSearchView: View {
     @State private var selectedOption: DestinationSearchOptions = .location //to re-render the view when the state changes
     @State private var noOfGuests: Int = 0
     
+    @EnvironmentObject var viewModel: ExploreViewModel // access to ExploreViewModel
     
     var body: some View {
         VStack {
             HStack {
                 Button {
+                    viewModel.searchLocation = destination
+                    viewModel.filterListingsByLocation()
+                    
                     withAnimation(.snappy) {
                         show.toggle() // toggles state value and returns to ExploreView.
                     }
@@ -63,7 +67,8 @@ struct DestinationSearchView: View {
                             Image(systemName: "magnifyingglass")
                                 .imageScale(.small)
                             TextField("Search destinations", text: $destination)
-                                .font(.subheadline)//binds to the state. and stores in the state variable. state changed -> view refreshes, text is shown
+                                .font(.subheadline)
+                            //binds to the state. and stores in the state variable. state changed -> view refreshes, text is shown
                         }
                         .frame(height: 44)
                         .padding(.horizontal)
