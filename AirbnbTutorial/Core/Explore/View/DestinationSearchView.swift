@@ -18,7 +18,7 @@ struct DestinationSearchView: View {
     @Binding var fromDate: Date
     @Binding var toDate: Date
     
-    @State private var destination = ""
+//    @State private var destination = ""
     @State private var selectedOption: DestinationSearchOptions = .location //to re-render the view when the state changes
     @State private var noOfGuests: Int = 0
     
@@ -28,7 +28,7 @@ struct DestinationSearchView: View {
         VStack {
             HStack {
                 Button {
-                    viewModel.searchLocation = destination
+//                    viewModel.searchLocation = destination
                     viewModel.filterListingsByLocation()
                     
                     withAnimation(.snappy) {
@@ -42,9 +42,9 @@ struct DestinationSearchView: View {
                 
                 Spacer()
                 
-                if destination != "" || noOfGuests != 0 {
+                if viewModel.searchLocation != "" || noOfGuests != 0 {
                     Button("Clear") {
-                        destination = ""
+                        viewModel.searchLocation = ""
                         fromDate = Date()
                         toDate = Date()
                         noOfGuests = 0
@@ -66,7 +66,7 @@ struct DestinationSearchView: View {
                         HStack {
                             Image(systemName: "magnifyingglass")
                                 .imageScale(.small)
-                            TextField("Search destinations", text: $destination)
+                            TextField("Search destinations", text: $viewModel.searchLocation)
                                 .font(.subheadline)
                             //binds to the state. and stores in the state variable. state changed -> view refreshes, text is shown
                         }
