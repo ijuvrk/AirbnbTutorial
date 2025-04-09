@@ -34,18 +34,36 @@ struct ExploreView: View {
                                 showDestinationSearchView.toggle()
                             }
                         }
-                    LazyVStack(spacing: 32) {
-                        ForEach(viewModel.filteredListings) { listing in
-                            NavigationLink(value: listing) {
-                                ListingItemView(listing: listing,
-                                                checkInDate: selectedFromDate,
-                                                checkOutDate: selectedToDate) 
-                                    .frame(height: 400)
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                        if !viewModel.searchLocation.isEmpty && viewModel.filteredListings.isEmpty {
+                                VStack(spacing: 8) {
+                                    Spacer().frame(height: 200)
+                                    HStack {
+                                        Image(systemName: "magnifyingglass")
+                                            .symbolEffect(.wiggle.byLayer, options: .nonRepeating)
+                                        
+                                        Text("No Listings Found!")
+                                            .font(.headline)
+                                    }
+                                    
+                                    Text("Try Searching for a different location")
+                                        .font(.caption)
+//                                    Spacer()
+                                }
+                        } else {
+                            LazyVStack(spacing: 32) {
+                                ForEach(viewModel.filteredListings) { listing in
+                                    NavigationLink(value: listing) {
+                                        ListingItemView(listing: listing,
+                                                        checkInDate: selectedFromDate,
+                                                        checkOutDate: selectedToDate)
+                                            .frame(height: 400)
+                                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    }
+                                }
                             }
+                            .padding()
                         }
-                    }
-                    .padding()
+                    
                 }
                 .navigationDestination(for: Listing.self) { listing in
                         ListingDetailView(listing: listing, checkInDate: selectedFromDate,
