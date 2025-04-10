@@ -29,6 +29,7 @@ struct ExploreView: View {
             else {
                 ScrollView {
                     SearchAndFilterBar()
+                        .environmentObject(viewModel)
                         .onTapGesture {
                             withAnimation(.snappy) {
                                 showDestinationSearchView.toggle()
