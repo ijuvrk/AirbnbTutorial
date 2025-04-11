@@ -10,7 +10,8 @@ import SwiftUI
 struct ExploreView: View {
     
     @State private var showDestinationSearchView = false //gives control to create custom animations, precise control over view switching
-    @StateObject var viewModel = ExploreViewModel(service: ExploreService())    // connects UI with data
+    @StateObject var viewModel = ExploreViewModel(service: ExploreService())    // connects UI with data // initiates
+    
     
     @State private var selectedFromDate = Date()
     @State private var selectedToDate = Date()
