@@ -13,11 +13,24 @@ struct User: Identifiable, Codable {
     let password: String
     let email: String
     let fullName: String
-    let phoneNumber: Int
+    let phoneNumber: String
     let profileImageURL: String
     let userType: UserType
-    let accountCreationDate: Date?
+    let accountCreationDate: Date
     var lastLoginDate: Date?
+    
+    var initials:String {
+        let components = fullName.components(separatedBy: " ")
+        
+        if components.count > 1,
+           let first = components.first?.first,
+           let last = components.last?.first {
+            return "\(first)\(last)"
+        } else if let first = components.first?.first { //chaining else and if let binding 
+            return "\(first)"
+        }
+           return ""
+    }
 }
 
 
@@ -38,3 +51,5 @@ enum UserType: Int, Codable {
         }
     }
 }
+
+
