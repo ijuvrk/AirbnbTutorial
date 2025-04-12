@@ -19,6 +19,23 @@ struct User: Identifiable, Codable {
     let accountCreationDate: Date
     var lastLoginDate: Date?
     
+    enum UserType: Int, Codable {
+        case host
+        case guest
+        case admin
+        
+        var title: String {
+            switch self {
+            case .host:
+                return "Host"
+            case .guest:
+                return "Guest"
+            case .admin:
+                return "Admin"
+            }
+        }
+    }
+    
     var initials:String {
         let components = fullName.components(separatedBy: " ")
         
@@ -35,21 +52,6 @@ struct User: Identifiable, Codable {
 
 
 
-enum UserType: Int, Codable {
-    case host
-    case guest
-    case admin
-    
-    var title: String {
-        switch self {
-        case .host:
-            return "Host"
-        case .guest:
-            return "Guest"
-        case .admin:
-            return "Admin"
-        }
-    }
-}
+
 
 
