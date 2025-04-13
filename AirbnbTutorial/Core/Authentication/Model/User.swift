@@ -9,8 +9,6 @@ import Foundation
 
 struct User: Identifiable, Codable {
     var id: String
-    let userName: String
-    let password: String
     let email: String
     let fullName: String
     let phoneNumber: String

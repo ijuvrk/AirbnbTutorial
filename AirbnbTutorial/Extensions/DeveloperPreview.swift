@@ -172,4 +172,39 @@ class DeveloperPreview {
             type: .villa
         )
     ]
+    
+    // mock data for users
+    
+    var users: [User] = [
+        .init(
+            id: NSUUID().uuidString,
+                    email: "user1@example.com",
+                    fullName: "John Smith",
+                    phoneNumber: "555-123-4567",
+                    profileImageURL: "profile-1",
+                    userType: .guest,
+                    accountCreationDate: Date(timeIntervalSince1970: 1609459200), // Jan 1, 2021
+                    lastLoginDate: Date()
+        ),
+        .init(
+                id: NSUUID().uuidString,
+                email: "host@example.com",
+                fullName: "Jane Doe",
+                phoneNumber: "555-987-6543",
+                profileImageURL: "profile-2",
+                userType: .host,
+                accountCreationDate: Date(timeIntervalSince1970: 1614556800), // Mar 1, 2021
+                lastLoginDate: Date()
+            ),
+            .init(
+                id: NSUUID().uuidString,
+                email: "admin@airbnb.com",
+                fullName: "Admin User",
+                phoneNumber: "555-111-2222",
+                profileImageURL: "profile-3",
+                userType: .admin,
+                accountCreationDate: Date(timeIntervalSince1970: 1619827200), // May 1, 2021
+                lastLoginDate: Date()
+            )
+    ]
 }

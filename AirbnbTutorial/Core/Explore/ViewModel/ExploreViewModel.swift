@@ -13,10 +13,10 @@ class ExploreViewModel: ObservableObject { // observableOjbect - swiftUI can det
     @Published var searchLocation = "" // store the search query
     @Published var filteredListings = [Listing]()
     
-    private let service: ExploreService
+    private let service: ExploreService // declare dependency
     
     init(service: ExploreService) {         // dependency injection     // can name anything instead of "service"
-        self.service = service
+        self.service = service // in a class we need to initialize
         
         Task { await fetchListings() }      // to immediately load the listing. since fetchListings() is an async func it used await to fetch.
     }
