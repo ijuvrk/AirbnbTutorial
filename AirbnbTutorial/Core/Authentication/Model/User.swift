@@ -11,8 +11,8 @@ struct User: Identifiable, Codable {
     var id: String
     let email: String
     let fullName: String
-    let phoneNumber: String
-    let profileImageURL: String
+    let phoneNumber: String?
+    let profileImageURL: String?
     let userType: UserType
     let accountCreationDate: Date
     var lastLoginDate: Date?
