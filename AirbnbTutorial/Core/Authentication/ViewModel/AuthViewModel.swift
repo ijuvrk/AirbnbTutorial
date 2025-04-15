@@ -69,6 +69,9 @@ class AuthViewModel: ObservableObject {
         updatedUsers.append(newUser)
         // save userdata function
         
+        // store credentials
+        saveCredentials(email, password)
+        
     }
     
     private func isValidEmail(_ email: String) -> Bool {
@@ -87,27 +90,44 @@ class AuthViewModel: ObservableObject {
             return users
         }
     }
-        
-        private func saveUsers(_ users: [User]) {
-            if let encoded = try? JSONEncoder().encode(users) {
-                UserDefaults.standard.set(encoded, forKey: "registeredUsers")
-            }
+    
+    private func saveUsers(_ users: [User]) {
+        if let encoded = try? JSONEncoder().encode(users) {
+            UserDefaults.standard.set(encoded, forKey: "registeredUsers")
         }
+    }
+    
+    private func saveCredentials(_ email: String, _ password: String) {
+        var credentials = getCredentials()
+        credentials[email] = password
         
-        // login func // should change the way this func work
-        // we are no longer using mock data, we accept and store the data
-        
-        func logIn(email: String, password: String) {
-            authError = nil // resets error from previous attempt
-            if email == currentUser?.email,
-               password == currentUser?.password {
-                authError = nil
-                UserDefaults.standard.set(isAuthenticated, forKey: isAuthenticatedKey)
-            } else {
-                return authError = "Invalid email or password"
-            }
-            
+        if let encoded = try? JSONEncoder().encode(credentials) {
+            UserDefaults.standard.set(encoded, forKey: "userCredentials")
         }
-        
+    }
+    
+    private func getCredentials() -> [String : String] {
+        if let credentialData = UserDefaults.standard.data(forKey: "userCredentials"),
+           let credentials = try? JSONDecoder().decode([String : String].self, from: credentialData) {
+            return credentials
+        }
+        return [:]
+    }
+    
+    // login func // should change the way this func work
+    // we are no longer using mock data, we accept and store the data
+    
+    func logIn(email: String, password: String) {
+        authError = nil // resets error from previous attempt
+        if email == currentUser?.email,
+           password == currentUser?.password {
+            authError = nil
+            UserDefaults.standard.set(isAuthenticated, forKey: isAuthenticatedKey)
+        } else {
+            return authError = "Invalid email or password"
+        }
         
     }
+    
+    
+}
