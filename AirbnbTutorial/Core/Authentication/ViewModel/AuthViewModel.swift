@@ -70,8 +70,12 @@ class AuthViewModel: ObservableObject {
         // save userdata function
         
         // store credentials
-        saveCredentials(email, password)
+        saveCredentials(email, password	)
         
+        // Log user in
+        currentUser = newUser
+        isAuthenticated = true
+        // saveUserState function - 
     }
     
     private func isValidEmail(_ email: String) -> Bool {
