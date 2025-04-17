@@ -67,7 +67,7 @@ class AuthViewModel: ObservableObject {
         // save user data
         var updatedUsers = existingUsers
         updatedUsers.append(newUser)
-        // save userdata function
+        saveUsers(updatedUsers)
         
         // store credentials
         saveCredentials(email, password	)
