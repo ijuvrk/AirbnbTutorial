@@ -15,13 +15,15 @@ class AuthViewModel: ObservableObject {
     @Published var authError: String?
     
     private let isAuthenticatedKey = "isAuthenticated"
-    private let userKey = "currentKey"
+    private let currentUserKey = "currentKey"
+    private let userCredentialKey = "userCredentials"
+    private let registeredUsersKey = "registeredUsers"
     
     init() {
         self.isAuthenticated = UserDefaults.standard.bool(forKey: isAuthenticatedKey)
         
         if isAuthenticated,
-           let userData = UserDefaults.standard.data(forKey: userKey),
+           let userData = UserDefaults.standard.data(forKey: currentUserKey),
            let decodedUser = try? JSONDecoder().decode(User.self, from: userData) { // decoding the JSON data and map into the model
             self.currentUser = decodedUser
         }
@@ -70,12 +72,13 @@ class AuthViewModel: ObservableObject {
         saveUsers(updatedUsers)
         
         // store credentials
-        saveCredentials(email, password	)
+        saveCredentials(email, password)
         
         // Log user in
         currentUser = newUser
         isAuthenticated = true
-        // saveUserState function - 
+        // saveUserState function -
+        saveUserState()
     }
     
     private func isValidEmail(_ email: String) -> Bool {
@@ -89,15 +92,16 @@ class AuthViewModel: ObservableObject {
     }
     
     private func getRegisteredUsers() -> [User] {
-        if let userData = UserDefaults.standard.data(forKey: "registeredUsers"), // use the registeredUsers key
+        if let userData = UserDefaults.standard.data(forKey: registeredUsersKey), // use the registeredUsers key
            let users = try? JSONDecoder().decode([User].self, from: userData) {
             return users
         }
+        return []
     }
     
     private func saveUsers(_ users: [User]) {
         if let encoded = try? JSONEncoder().encode(users) {
-            UserDefaults.standard.set(encoded, forKey: "registeredUsers")
+            UserDefaults.standard.set(encoded, forKey: registeredUsersKey)
         }
     }
     
@@ -106,16 +110,26 @@ class AuthViewModel: ObservableObject {
         credentials[email] = password
         
         if let encoded = try? JSONEncoder().encode(credentials) {
-            UserDefaults.standard.set(encoded, forKey: "userCredentials")
+            UserDefaults.standard.set(encoded, forKey: userCredentialKey)
         }
     }
     
     private func getCredentials() -> [String : String] {
-        if let credentialData = UserDefaults.standard.data(forKey: "userCredentials"),
+        if let credentialData = UserDefaults.standard.data(forKey: userCredentialKey),
            let credentials = try? JSONDecoder().decode([String : String].self, from: credentialData) {
             return credentials
         }
         return [:]
+    }
+    
+    private func saveUserState() {
+        // save the authentication state
+        UserDefaults.standard.set(isAuthenticated, forKey: isAuthenticatedKey)
+        
+        // save the current user data
+        if let user = currentUser, let encoded = try? JSONEncoder().encode(user) {
+            UserDefaults.standard.set(encoded, forKey: currentUserKey)
+        }
     }
     
     // login func // should change the way this func work
