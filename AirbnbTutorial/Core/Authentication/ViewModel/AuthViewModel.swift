@@ -147,5 +147,31 @@ class AuthViewModel: ObservableObject {
         
     }
     
+    func logIn(_ email: String, _ password: String) {
+        authError = nil
+        
+        // validating email and password
+        guard isValidEmail(email) else {
+            authError = "The email is invalid"
+            return
+        }
+        
+        guard isValidPassword(password) else {
+            authError = "Password must be atleast 6 characters"
+            return
+        }
+        
+        let existingUsers = getRegisteredUsers()
+        let userCredentials = getCredentials()
+        if existingUsers.contains(where: { $0.email == email }),
+            if userCredentials.contains(where: { $0.[email : password] }) {
+            // save user state
+            isAuthenticated = true
+            saveUserState()
+        } else {
+            authError = "Entered credentials are wrong"
+        }
+    }
+    
     
 }
