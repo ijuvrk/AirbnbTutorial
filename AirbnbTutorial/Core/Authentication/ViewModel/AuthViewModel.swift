@@ -135,17 +135,17 @@ class AuthViewModel: ObservableObject {
     // login func // should change the way this func work
     // we are no longer using mock data, we accept and store the data
     
-    func logIn(email: String, password: String) {
-        authError = nil // resets error from previous attempt
-        if email == currentUser?.email,
-           password == currentUser?.password {
-            authError = nil
-            UserDefaults.standard.set(isAuthenticated, forKey: isAuthenticatedKey)
-        } else {
-            return authError = "Invalid email or password"
-        }
-        
-    }
+//    func logIn(email: String, password: String) {
+//        authError = nil // resets error from previous attempt
+//        if email == currentUser?.email,
+//           password == currentUser?.password {
+//            authError = nil
+//            UserDefaults.standard.set(isAuthenticated, forKey: isAuthenticatedKey)
+//        } else {
+//            return authError = "Invalid email or password"
+//        }
+//        
+//    }
     
     func logIn(_ email: String, _ password: String) {
         authError = nil
@@ -163,14 +163,15 @@ class AuthViewModel: ObservableObject {
         
         let existingUsers = getRegisteredUsers()
         let userCredentials = getCredentials()
-        if existingUsers.contains(where: { $0.email == email }),
-            if userCredentials.contains(where: { $0.[email : password] }) {
+        if existingUsers.contains(where: { $0.email == email }) &&
+           if userCredentials.contains(where: { $0.[email : password] }) {
             // save user state
             isAuthenticated = true
             saveUserState()
         } else {
             authError = "Entered credentials are wrong"
         }
+    
     }
     
     
