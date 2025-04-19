@@ -163,14 +163,44 @@ class AuthViewModel: ObservableObject {
         
         let existingUsers = getRegisteredUsers()
         let userCredentials = getCredentials()
-        if existingUsers.contains(where: { $0.email == email }) &&
-           if userCredentials.contains(where: { $0.[email : password] }) {
-            // save user state
+//        if existingUsers.contains(where: { $0.email == email }) &&
+//           if userCredentials.contains(where: { $0.[email : password] }) {
+//            // save user state
+//            isAuthenticated = true
+//            saveUserState()
+//        } else {
+//            authError = "Entered credentials are wrong"
+//        }
+        
+        if let storedPassword = userCredentials[email], storedPassword == password {
             isAuthenticated = true
-            saveUserState()
         } else {
-            authError = "Entered credentials are wrong"
+            authError = "Credentials are wrong."
+            return
         }
+        
+        //set the current user
+        if let user = existingUsers.first(where: { $0.email == email }) {
+            currentUser = user
+        }
+        
+        //save the user state
+        saveUserState()
+        
+        //temp code for returning which one of credential is wrong.
+//        if !existingUsers.contains(where: { $0.email == email }) {
+//            authError = "Email doesn't exist."
+//            return
+//        }
+//        
+//        if let storedPassword = userCredentials[email], storedPassword == password {
+//            isAuthenticated = true
+//        } else {
+//            authError = "Password doesn't match."
+//            return
+//        }
+        
+        
     
     }
     
