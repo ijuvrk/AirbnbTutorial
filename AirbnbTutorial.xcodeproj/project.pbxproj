@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB0BC5FB2DB432BE007058EA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC5FA2DB432BE007058EA /* LoginView.swift */; };
 		AB3BBBFC2D84BF3E001434F2 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3BBBFB2D84BF3E001434F2 /* ExploreViewModel.swift */; };
 		AB3BBBFE2D84C37B001434F2 /* ExploreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3BBBFD2D84C37B001434F2 /* ExploreService.swift */; };
 		AB81536E2DA9B414008157E6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB81536D2DA9B414008157E6 /* User.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB0BC5FA2DB432BE007058EA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AB3BBBFB2D84BF3E001434F2 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		AB3BBBFD2D84C37B001434F2 /* ExploreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreService.swift; sourceTree = "<group>"; };
 		AB81536D2DA9B414008157E6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		AB81536C2DA9B2CB008157E6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB0BC5FA2DB432BE007058EA /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				ABAFC9A72D7B6FDA003BCD78 /* ProfileView.swift in Sources */,
 				ABCF86212D72453500872850 /* ListingItemView.swift in Sources */,
 				ABCF862A2D7502FD00872850 /* RatingView.swift in Sources */,
+				AB0BC5FB2DB432BE007058EA /* LoginView.swift in Sources */,
 				ABC3ECB52D9CA90C009B5A16 /* ListingExtensions.swift in Sources */,
 				AB849BF12DA01EB80000454D /* ListingMapView.swift in Sources */,
 				ABC3ECB02D9AAA2C009B5A16 /* DateExtensions.swift in Sources */,
