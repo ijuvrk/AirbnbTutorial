@@ -82,7 +82,11 @@ struct LoginView: View {
             .padding(.top, 25)
             
             //socials view
-            
+            VStack(spacing: 20) {
+                SocialLoginButton(action: {
+                    print("Button is pressed")
+                }, socialLogo: "airbnb-1", social: "Apple")
+            }
             Spacer()
             
         }

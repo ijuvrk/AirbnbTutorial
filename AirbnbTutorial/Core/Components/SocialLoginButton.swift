@@ -20,15 +20,17 @@ struct SocialLoginButton: View {
             HStack {
                 Spacer()
                 
-                Image("airbnb-1")
+                Image(socialLogo)
                     .resizable()
                     .scaledToFit()
+                    .frame(width: 24, height: 24)
                 
                 Text("Continue with \(social)")
                     .font(.headline)
                     .fontWeight(.semibold)
                     .foregroundStyle(.black)
-                    .frame(width: 360, height: 48)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 48)
             }
             .overlay {
                 RoundedRectangle(cornerRadius: 12)
