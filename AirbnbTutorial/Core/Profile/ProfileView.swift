@@ -20,7 +20,7 @@ struct ProfileView: View {
                     Text("Log in to start planning your next trip")
                 }
                 
-                PrimaryLoginButtonView(action: { print("button tapped")})
+                PrimaryLoginButtonView(action: { print("button tapped")}, buttonText: "Log In")
                 
                 HStack {
                     Text("Don't have an account?")

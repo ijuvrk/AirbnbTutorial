@@ -24,7 +24,7 @@ struct WishlistView: View {
                 
                 PrimaryLoginButtonView(action: {
                     print("Button Tapped")
-                })
+                }, buttonText: "Log In")
                 
                 Spacer()
             }

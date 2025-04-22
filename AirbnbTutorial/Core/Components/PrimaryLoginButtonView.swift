@@ -9,14 +9,16 @@ import SwiftUI
 
 struct PrimaryLoginButtonView: View {
     let action: () -> Void
+    let buttonText: String
     var width: CGFloat = 360
+    
     var body: some View {
         Button {
             action()
         } label : {
-            Text("Log in")
+            Text(buttonText)
                 .foregroundStyle(.white)
-                .font(.subheadline)
+                .font(.headline)
                 .fontWeight(.semibold)
                 .frame(width: width, height: 48)
                 .background(.pink)
@@ -28,5 +30,5 @@ struct PrimaryLoginButtonView: View {
 #Preview {
     PrimaryLoginButtonView(action: {
         print("Button tapped")
-    }, width: 360)
+    }, buttonText: "Log In", width: 360)
 }

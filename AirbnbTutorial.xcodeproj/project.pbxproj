@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AB0BC5FB2DB432BE007058EA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC5FA2DB432BE007058EA /* LoginView.swift */; };
+		AB0BC5FD2DB810AF007058EA /* SocialLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC5FC2DB810AF007058EA /* SocialLoginButton.swift */; };
 		AB3BBBFC2D84BF3E001434F2 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3BBBFB2D84BF3E001434F2 /* ExploreViewModel.swift */; };
 		AB3BBBFE2D84C37B001434F2 /* ExploreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3BBBFD2D84C37B001434F2 /* ExploreService.swift */; };
 		AB81536E2DA9B414008157E6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB81536D2DA9B414008157E6 /* User.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		AB0BC5FA2DB432BE007058EA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		AB0BC5FC2DB810AF007058EA /* SocialLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginButton.swift; sourceTree = "<group>"; };
 		AB3BBBFB2D84BF3E001434F2 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		AB3BBBFD2D84C37B001434F2 /* ExploreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreService.swift; sourceTree = "<group>"; };
 		AB81536D2DA9B414008157E6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				ABCF86272D74FF5900872850 /* ListingImageCarouselView.swift */,
 				ABCF86292D7502FD00872850 /* RatingView.swift */,
 				ABAFC9AC2D7B7D46003BCD78 /* PrimaryLoginButtonView.swift */,
+				AB0BC5FC2DB810AF007058EA /* SocialLoginButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 			files = (
 				ABCF86282D74FF5900872850 /* ListingImageCarouselView.swift in Sources */,
 				ABAFC9A92D7B7473003BCD78 /* ProfileOptionRowView.swift in Sources */,
+				AB0BC5FD2DB810AF007058EA /* SocialLoginButton.swift in Sources */,
 				ABCF860E2D70A7E200872850 /* AirbnbTutorialApp.swift in Sources */,
 				ABAFC9A72D7B6FDA003BCD78 /* ProfileView.swift in Sources */,
 				ABCF86212D72453500872850 /* ListingItemView.swift in Sources */,
