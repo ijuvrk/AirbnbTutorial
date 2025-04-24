@@ -43,5 +43,5 @@ struct SocialLoginButton: View {
 #Preview {
     SocialLoginButton(action: {
         print("Button is pressed")
-    }, socialLogo: "airbnb-1", social: "airbnb")
+    }, socialLogo: "airbnb-1", social: "social-name")
 }
