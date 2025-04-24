@@ -11,11 +11,13 @@ struct LoginView: View {
     @State private var username = ""
     @State private var password = ""
     
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 8) {
                 Button() {
-                    print("Button is pressed")
+                    dismiss()
                 } label: {
                     Image(systemName: "xmark")
                         .imageScale(.large)

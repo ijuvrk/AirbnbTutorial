@@ -148,7 +148,9 @@ struct DestinationSearchView: View {
 #Preview {
     DestinationSearchView(show: .constant(false),
                           fromDate: .constant(Date()),
-                          toDate: .constant(Date())) //just for preview, dummy binding since there is no parentview while on preview mode
+                          toDate: .constant(Date()))
+    .environmentObject(ExploreViewModel(service: ExploreService()))
+    //just for preview, dummy binding since there is no parentview while on preview mode
 }
 
 struct CollapsablePickerView: View {
