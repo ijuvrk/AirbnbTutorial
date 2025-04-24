@@ -230,4 +230,5 @@ struct ListingDetailView: View {
 
 #Preview {
     ListingDetailView(listing: DeveloperPreview.shared.listings[2], checkInDate: Date(), checkOutDate: Date())
+        .environmentObject(ExploreViewModel(service: ExploreService()))
 }

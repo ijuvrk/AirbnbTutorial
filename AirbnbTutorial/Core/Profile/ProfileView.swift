@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @State private var showLoginModal = false
+    
     var body: some View {
         VStack {
             // profile login view
@@ -20,7 +22,12 @@ struct ProfileView: View {
                     Text("Log in to start planning your next trip")
                 }
                 
-                PrimaryLoginButtonView(action: { print("button tapped")}, buttonText: "Log In")
+                PrimaryLoginButtonView(action: {
+                    showLoginModal = true
+                }, buttonText: "Log In")
+                .sheet(isPresented: $showLoginModal) {
+                    LoginView()
+                }
                 
                 HStack {
                     Text("Don't have an account?")

@@ -44,4 +44,5 @@ struct SearchAndFilterBar: View {
 
 #Preview {
     SearchAndFilterBar()
+        .environmentObject(ExploreViewModel(service: ExploreService()))
 }
