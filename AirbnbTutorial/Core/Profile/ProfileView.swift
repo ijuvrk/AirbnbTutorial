@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     @State private var showLoginModal = false
+    @State private var showSignupModal = false
     
     var body: some View {
         VStack {
@@ -32,9 +33,17 @@ struct ProfileView: View {
                 HStack {
                     Text("Don't have an account?")
                     
-                    Text("Sign up")
-                        .fontWeight(.semibold)
-                        .underline()
+                    Button {
+                        showSignupModal = true
+                    } label: {
+                        Text("Sign up")
+                            .foregroundStyle(.black)
+                            .underline()
+                            .fontWeight(.semibold)
+                    }
+                    .sheet(isPresented: $showSignupModal) {
+                        SignUpView()
+                    }
                 }
                 .font(.caption)
             }
@@ -45,7 +54,6 @@ struct ProfileView: View {
                 ProfileOptionRowView(imageName: "gear", title: "Settings")
                 ProfileOptionRowView(imageName: "gear", title: "Accessibility")
                 ProfileOptionRowView(imageName: "questionmark.circle", title: "Visit the help center")
-                
             }
             .padding(.vertical)
         }
