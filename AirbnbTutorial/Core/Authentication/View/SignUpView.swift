@@ -12,6 +12,9 @@ struct SignUpView: View {
     @State private var password = ""
     @State private var firstName = ""
     @State private var secondName = ""
+    @State private var confirmPassword = ""
+    
+    @FocusState private var focusedField: Field?
     var body: some View {
         
         VStack(alignment: .leading, spacing: 8) {
@@ -26,8 +29,11 @@ struct SignUpView: View {
                 .kerning(0.9)
                 .padding(.bottom, 15)
             
-            TextField("Username", text: $username)
+            TextField("First Name", text: $firstName)
+                .autocorrectionDisabled()
             TextField("Second Name", text: $secondName)
+                .autocorrectionDisabled()
+            
             
             Spacer()
         }
