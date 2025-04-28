@@ -13,15 +13,18 @@ struct CustomTextField: View {
     @Binding var text: String
     
     var body: some View {
-        if isSecure {
-            SecureField(placeholder, text: $text)
-                .autocorrectionDisabled()
-        } else {
-            TextField(placeholder, text: $text)
+        VStack {
+            if isSecure {
+                SecureField(placeholder, text: $text)
+                    .autocorrectionDisabled()
+            } else {
+                TextField(placeholder, text: $text)
+            }
         }
+        .overlay 
     }
 }
 
 #Preview {
-    CustomTextField()
+    CustomTextField(placeholder: "Username", isSecure: false, text: .constant(""))
 }

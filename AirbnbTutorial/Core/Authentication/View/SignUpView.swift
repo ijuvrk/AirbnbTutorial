@@ -14,7 +14,6 @@ struct SignUpView: View {
     @State private var secondName = ""
     @State private var confirmPassword = ""
     
-    @FocusState private var focusedField: Field?
     var body: some View {
         
         VStack(alignment: .leading, spacing: 8) {
