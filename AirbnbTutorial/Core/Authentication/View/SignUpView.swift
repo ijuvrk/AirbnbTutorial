@@ -28,11 +28,11 @@ struct SignUpView: View {
                 .kerning(0.9)
                 .padding(.bottom, 15)
             
-            TextField("First Name", text: $firstName)
-                .autocorrectionDisabled()
-            TextField("Second Name", text: $secondName)
-                .autocorrectionDisabled()
-            
+            VStack(spacing: 0) {
+                CustomTextField(placeholder: "First Name", isSecure: false, text: $firstName)
+                Divider()
+                CustomTextField(placeholder: "Second Name", isSecure: false, text: $secondName)
+            }
             
             Spacer()
         }

@@ -19,9 +19,15 @@ struct CustomTextField: View {
                     .autocorrectionDisabled()
             } else {
                 TextField(placeholder, text: $text)
+                    .autocorrectionDisabled()
             }
         }
-        .overlay 
+        .padding(10)
+        .font(.caption)
+        .overlay {
+            RoundedRectangle(cornerRadius: 4)
+                .stroke(Color.gray, lineWidth: 0.5)
+        }
     }
 }
 
