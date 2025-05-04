@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct ConnectedTextField: View {
+    @State private var text = ""
+    @State private var text2 = ""
+    
+    let placeholder = ""
+    
     var body: some View {
         VStack {
+            TextField(placeholder, text: $text)
             
+            Divider()
+            
+            TextField(placeholder, text: $text2)
         }
     }
 }
