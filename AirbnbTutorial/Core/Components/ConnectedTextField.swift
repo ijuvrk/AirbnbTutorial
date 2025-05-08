@@ -21,6 +21,7 @@ struct ConnectedTextField: View {
             TextField(placeholder, text: $text)
             
             Divider()
+            
             Text(header2)
             TextField(placeholder, text: $text2)
         }
