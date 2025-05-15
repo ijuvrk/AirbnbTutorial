@@ -24,6 +24,7 @@ struct ConnectedTextField: View {
             
             Text(header2)
             TextField(placeholder, text: $text2)
+            
         }
     }
 }
