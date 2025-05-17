@@ -17,6 +17,7 @@ struct ConnectedTextField: View {
     
     var body: some View {
         VStack {
+            
             Text(header)
             TextField(placeholder, text: $text)
             
