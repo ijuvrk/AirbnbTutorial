@@ -62,7 +62,8 @@ struct LoginView: View {
                 .font(.caption)
                 .overlay {
                     RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color.gray, lineWidth: 0.5)
+//                        .stroke(Color.gray, lineWidth: 0.5)
+                        .stroke(Color.primary.opacity(0.5), lineWidth: 0.5)
                     
                 }
                 

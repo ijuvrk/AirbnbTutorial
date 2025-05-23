@@ -17,7 +17,6 @@ struct ConnectedTextField: View {
     
     var body: some View {
         VStack {
-            
             Text(header)
             TextField(placeholder, text: $text)
             
@@ -25,7 +24,11 @@ struct ConnectedTextField: View {
             
             Text(header2)
             TextField(placeholder, text: $text2)
-            
+        }
+        .padding(10)
+        .overlay {
+            RoundedRectangle(cornerRadius: 5)
+                .stroke(Color.gray, lineWidth: 0.2)
         }
     }
 }
