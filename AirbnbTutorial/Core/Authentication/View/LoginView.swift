@@ -43,7 +43,7 @@ struct LoginView: View {
                 
                 VStack(alignment: .leading) {
                     Text("Username/email")
-                        .foregroundStyle(.gray)
+                        .foregroundStyle(.secondary)
                     TextField("username", text: $username)
                         .keyboardType(.emailAddress)
                         .textInputAutocapitalization(.never)
@@ -55,16 +55,14 @@ struct LoginView: View {
                         .padding(.horizontal, -10)
                     
                     Text("Password")
-                        .foregroundStyle(.gray)
+                        .foregroundStyle(.secondary)
                     SecureField("password", text: $password)
                 }
                 .padding(10)
                 .font(.caption)
                 .overlay {
                     RoundedRectangle(cornerRadius: 8)
-//                        .stroke(Color.gray, lineWidth: 0.5)
                         .stroke(Color.primary.opacity(0.5), lineWidth: 0.5)
-                    
                 }
                 
                 //continue button
