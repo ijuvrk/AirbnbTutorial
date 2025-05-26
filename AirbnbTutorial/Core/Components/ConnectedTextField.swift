@@ -12,7 +12,9 @@ struct ConnectedTextField: View {
     let fields: [FieldData]
     
     var body: some View {
-        
+        VStack(alignment: .leading, spacing: 8) {
+            ForEach(
+        }
     }
     
     
