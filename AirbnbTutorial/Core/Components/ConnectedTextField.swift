@@ -13,7 +13,7 @@ struct ConnectedTextField: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            ForEach(Array(fields.enumerated()), id: \.offset) {
+            ForEach(Array(fields.enumerated()) {
                 
             }
         }
@@ -56,7 +56,8 @@ struct ConnectedTextField: View {
 //    }
 }
 
-struct FieldData {
+struct FieldData: Identifiable {
+    let id = UUID()
     let label: String
     let placeholder: String
     let text: Binding<String>
@@ -67,5 +68,5 @@ struct FieldData {
 }
 
 #Preview {
-    ConnectedTextField()
+    ConnectedTextField(fields: <#[FieldData]#>)
 }
