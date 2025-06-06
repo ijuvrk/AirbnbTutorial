@@ -13,7 +13,7 @@ struct ConnectedTextField: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            ForEach(Array(fields.enumerated()) {
+            ForEach(fields) {
                 
             }
         }
