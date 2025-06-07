@@ -15,7 +15,17 @@ struct ConnectedTextField: View {
         VStack(alignment: .leading, spacing: 8) {
             ForEach(fields) {
                 field in
+                Text(field.label)
+                    .foregroundStyle(.secondary)
                 
+                if field.isSecure {
+                    SecureField(field.placeholder, text: field.text)
+                } else {
+                    TextField(field.placeholder, text: field.text)
+                        .keyboardType(field.keyboardType)
+                        .textInputAutocapitalization(field.capitalization)
+                        .autocorrectionDisable(field.disableAutoCorrection)
+                }
             }
         }
     }
