@@ -10,11 +10,14 @@ import SwiftUI
 struct ConnectedTextField: View {
     
     let fields: [FieldData]
+    var @Binding text: FieldData
+//    let bindings: [Binding<String>] // just trying
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            ForEach(fields) {
-                field in
+            
+            ForEach(fields) { field in
+                
                 Text(field.label)
                     .foregroundStyle(.secondary)
                 
@@ -24,14 +27,19 @@ struct ConnectedTextField: View {
                     TextField(field.placeholder, text: field.text)
                         .keyboardType(field.keyboardType)
                         .textInputAutocapitalization(field.capitalization)
-                        .autocorrectionDisable(field.disableAutoCorrection)
+                        .autocorrectionDisabled(field.disableAutoCorrection)
                 }
+                
+                if let lastField = fields.last, field != lastField {
+                    Divider()
+                        .frame(height: 0.5)
+                        .background(Color(.gray))
+                        .padding(.horizontal, -10)
+                }
+                
             }
         }
     }
-    
-    
-
     
     
     
@@ -68,7 +76,7 @@ struct ConnectedTextField: View {
 }
 
 struct FieldData: Identifiable {
-    let id = UUID()
+    let id: String = UUID().uuidString
     let label: String
     let placeholder: String
     let text: Binding<String>
@@ -78,6 +86,8 @@ struct FieldData: Identifiable {
     let disableAutoCorrection: Bool
 }
 
+
+
 #Preview {
-    ConnectedTextField(fields: <#[FieldData]#>)
+    ConnectedTextField(fields: [FieldData(label: "Email", placeholder: "Enter your Email", text: .constant(""), isSecure: false, keyboardType: .emailAddress, capitalization: .never, disableAutoCorrection: true)])
 }
