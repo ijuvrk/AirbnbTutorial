@@ -39,33 +39,7 @@ struct LoginView: View {
                     .kerning(0.9)
                     .padding(.bottom, 15)
                 
-                // email and password textfield
-                
-//                VStack(alignment: .leading) {
-//                    Text("Username/email")
-//                        .foregroundStyle(.secondary)
-//                    TextField("username", text: $username)
-//                        .keyboardType(.emailAddress)
-//                        .textInputAutocapitalization(.never)
-//                        .autocorrectionDisabled()
-//                    
-//                    Divider()
-//                        .frame(height: 0.5)
-//                        .background(Color(.gray))
-//                        .padding(.horizontal, -10)
-//                    
-//                    Text("Password")
-//                        .foregroundStyle(.secondary)
-//                    SecureField("password", text: $password)
-//                }
-//                .padding(10)
-//                .font(.caption)
-//                .overlay {
-//                    RoundedRectangle(cornerRadius: 8)
-//                        .stroke(Color.primary.opacity(0.5), lineWidth: 0.5)
-//                }
-                
-                // trying custom ConnectedTextField
+                //custom textfield for id and password
                 ConnectedTextField(fields: [FieldData(
                     label: "Username", placeholder: "username", text: $username),
                 FieldData(label: "Password", placeholder: "password", text: $password, isSecure: true)])
