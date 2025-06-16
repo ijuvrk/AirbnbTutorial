@@ -34,7 +34,9 @@ struct SignUpView: View {
                 CustomTextField(placeholder: "Second Name", isSecure: false, text: $secondName)
             }
             
-            ConnectedTextField(fields: [FieldData(label: "First Name", placeholder: "First Name", text: $firstName)])
+            ConnectedTextField(fields: [FieldData(label: "First Name", placeholder: "First Name", text: $firstName),
+                                        FieldData(label: "Second Name", placeholder: "Second Name", text: $secondName)
+                                       ])
             
             Spacer()
         }
