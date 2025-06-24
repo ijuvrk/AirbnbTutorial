@@ -13,6 +13,7 @@ struct SignUpView: View {
     @State private var firstName = ""
     @State private var secondName = ""
     @State private var confirmPassword = ""
+    @State private var email = ""
 
     var body: some View {
 
@@ -28,18 +29,28 @@ struct SignUpView: View {
                 .kerning(0.9)
                 .padding(.bottom, 15)
 
-            ConnectedTextField(fields: [
-                FieldData(
-                    label: "First Name",
-                    placeholder: "First Name",
-                    text: $firstName
-                ),
-                FieldData(
-                    label: "Second Name",
-                    placeholder: "Second Name",
-                    text: $secondName
-                ),
-            ])
+            VStack(spacing: 15) {
+                ConnectedTextField(fields: [
+                    FieldData(
+                        label: "First Name",
+                        placeholder: "First Name",
+                        text: $firstName
+                    ),
+                    FieldData(
+                        label: "Second Name",
+                        placeholder: "Second Name",
+                        text: $secondName
+                    ),
+                ])
+                
+                CustomTextField(placeholder: "Email", isSecure: false, text: $email)
+                
+                ConnectedTextField(fields: [
+                    FieldData(label: "Password", placeholder: "Enter your password", text: $password, isSecure: true, capitalization: .never
+                    ),
+                    FieldData(label: "Confirm the password", placeholder: "Enter your password", text: $confirmPassword, isSecure: true, capitalization: .never)
+                ])
+            }
 
             PrimaryLoginButtonView(
                 action: { print("button clicked") },
