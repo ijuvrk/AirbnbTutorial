@@ -43,6 +43,7 @@ struct SignUpView: View {
                     ),
                 ])
                 
+                //username
                 CustomTextField(placeholder: "Username", isSecure: false, text: $username)
                 
                 //email
