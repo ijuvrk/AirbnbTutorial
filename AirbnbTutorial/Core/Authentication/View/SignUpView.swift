@@ -43,13 +43,20 @@ struct SignUpView: View {
                     ),
                 ])
                 
+                CustomTextField(placeholder: "Username", isSecure: false, text: $username)
+                
+                //email
                 CustomTextField(placeholder: "Email", isSecure: false, text: $email)
                 
+                //password and confirm password
                 ConnectedTextField(fields: [
                     FieldData(label: "Password", placeholder: "Enter your password", text: $password, isSecure: true, capitalization: .never
                     ),
                     FieldData(label: "Confirm the password", placeholder: "Enter your password", text: $confirmPassword, isSecure: true, capitalization: .never)
                 ])
+                
+                
+                
             }
 
             PrimaryLoginButtonView(
