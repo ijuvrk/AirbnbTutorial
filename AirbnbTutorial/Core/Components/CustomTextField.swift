@@ -25,8 +25,8 @@ struct CustomTextField: View {
         .padding(10)
         .font(.caption)
         .overlay {
-            RoundedRectangle(cornerRadius: 4)
-                .stroke(Color.gray, lineWidth: 0.5)
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(Color.primary.opacity(0.5), lineWidth: 0.5)
         }
     }
 }
