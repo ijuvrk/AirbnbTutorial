@@ -56,6 +56,8 @@ struct SignUpView: View {
                     FieldData(label: "Confirm the password", placeholder: "Enter your password", text: $confirmPassword, isSecure: true, capitalization: .never)
                 ])
                 
+                CustomTextField(placeholder: "DOB", isSecure: false, text: <#T##Binding<String>#>)
+                
             }
 
             PrimaryLoginButtonView(
