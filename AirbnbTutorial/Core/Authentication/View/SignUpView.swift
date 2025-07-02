@@ -14,6 +14,7 @@ struct SignUpView: View {
     @State private var secondName = ""
     @State private var confirmPassword = ""
     @State private var email = ""
+    @State private var dob = ""
 
     var body: some View {
 
@@ -56,7 +57,7 @@ struct SignUpView: View {
                     FieldData(label: "Confirm the password", placeholder: "Enter your password", text: $confirmPassword, isSecure: true, capitalization: .never)
                 ])
                 
-                CustomTextField(placeholder: "DOB", isSecure: false, text: <#T##Binding<String>#>)
+                CustomTextField(placeholder: "DOB", isSecure: false, text: dob)
                 
             }
 
