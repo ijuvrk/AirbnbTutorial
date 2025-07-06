@@ -57,7 +57,7 @@ struct SignUpView: View {
                     FieldData(label: "Confirm the password", placeholder: "Enter your password", text: $confirmPassword, isSecure: true, capitalization: .never)
                 ])
                 
-                DatePicker("Date of Birth", selection: $dateOfBirth)
+                DatePicker("Date of Birth", selection: $dateOfBirth, displayedComponents: .date)
                 
             }
 
