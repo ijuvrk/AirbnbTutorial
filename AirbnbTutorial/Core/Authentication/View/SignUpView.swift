@@ -57,7 +57,15 @@ struct SignUpView: View {
                     FieldData(label: "Confirm the password", placeholder: "Enter your password", text: $confirmPassword, isSecure: true, capitalization: .never)
                 ])
                 
+                // Date of Birth picker
                 DatePicker("Date of Birth", selection: $dateOfBirth, displayedComponents: .date)
+                    .foregroundStyle(.secondary)
+                    .padding(10)
+                    .font(.caption)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.primary.opacity(0.5), lineWidth: 0.5)
+                    }
                 
             }
 
